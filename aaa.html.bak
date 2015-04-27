@@ -1,0 +1,350 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <!DOCTYPE html>
+<html>
+	<head>
+	    <title>所有微博</title>  
+	    <script src="lib/jquery-2.1.1.min.js"></script>
+	    <script src="lib/underscore-min.js"></script>
+	    <script src="lib/backbone-min.js"></script>
+	    <script src="lib/backbone.mutators.js"></script>
+	</head>
+	<body>
+		  
+	</body>
+ </html>
+
+<script>
+ 
+//  		
+//  		var invoiceItemModel = Backbone.Model.extend({
+//  			
+//  			//设置默认值
+//  			defaults:{
+//  			 	price:0
+//  			},
+//  			
+//  			//计算数量
+//  			calculateAmout:function () {
+//  				return this.get('price') * this.get('quantity');
+//  			},
+//  			
+//  			validate:function  (attrs) {
+//  				if(attrs.quantity<=0){
+//  				 return "hehehehe";	
+//  				}
+//  			}
+//  			
+//  		});
+//  		
+//  		var itm1 =new invoiceItemModel({
+//  		 price:2  
+//  		});
+//  		
+//  		
+//  		itm1.on("invalid",function (model,error) {
+//  			alert(error);
+//  		});
+//  		
+//  		itm1.set(
+//  			{quantity:10},{
+//  			invalid:function(model,error){
+//  			  alert(error);	
+//  			},
+//  		  validate:true
+//  		});
+//  		
+//  		
+//  		//定义视图
+//  		var PreviewInvoiceItemView=Backbone.View.extend({
+//  		 
+//  		  template: _.template('\
+//  		    Price:<%=price  %>.\
+//  		    Quantity:<%= quantity %>.\
+//  		    Amout: <%= amout %>.\
+//  		  '),
+//  			
+//  			render:function(){
+//  			  
+//  			  var html=this.template({
+//  			    price:this.model.get('price'),
+//  			    quantity:this.model.get("quantity"),
+//  			    amout:this.model.calculateAmout()
+//  			  });	
+//  				
+//  				$(this.el).html(html+this.show);
+//  				
+//  			}
+//  			
+//  		});
+//  		
+//  		
+//  		
+//  		
+//  		
+//  		
+//  		
+//  		var Workspace= Backbone.Router.extend({
+//  		  routes:{
+//  		   '':'invoiceList',
+//  		   'invoice/:id':'invoiceList'	,
+//  		  }	,
+//  		  invoiceList:function(id){
+//  		  	var p1 =new PreviewInvoiceItemView({
+//		  		 model:itm1,
+//		  		 el:'body'
+//		  		 
+//		  		}); 
+//		  		p1.show=id ;
+//	  	    p1.render();
+//  	  	}
+//  	  });
+//  	  
+//  	  
+//  	  
+//  	  $(document).ready(function(){
+//  	  	new Workspace();
+//  	  	Backbone.history.start();	
+//  	  });
+//  		
+//  		
+//  		
+//  		
+  		
+  		
+//  		var BuyerModel=Backbone.Model.extend({
+//  			 mutators:{
+//  			   fullname:{
+//  			     get:function(){
+//  			      return  this.attributes.firstname+' '+this.attributes.lastname;
+//  			     }
+//  			     ,
+//  			     set:function(key,value,options,set){
+//  			       var names=value.split(' ');	
+//  			       this.set('firstname',names[0],options);
+//  			       this.set('lastname',names[1],options);
+//  			     }
+//  			     
+//  			   }
+//  			 },
+//  			 validate:function  (attrs) {
+//	  				if(attrs.quantity<=0){
+//	  				 return "hehehehe";	
+//	  				}
+//	  			}
+//  		});
+//  		
+//  		var bm=new BuyerModel();
+//  		
+//  		bm.set('fullname','joe bloggs');
+//  		
+//  		
+//  		alert(bm.get('fullname'));
+//  		alert(bm.get('firstname'));
+//  		alert(bm.get('lastname'));
+//  		
+////  		
+//  		
+//  		var InvoiceItemView=Backbone.View.extend({
+//  			el:'body',
+//  			initialize:function(){
+//  			  this.html="ddddddd";
+//  			},
+//  			render:function(){
+//  			  $(this.el).html(this.html);	
+//  			}
+//  	  });
+//  	  
+//  	  var iiv=new InvoiceItemView();
+//  	  
+////  	  iiv.render();
+//  		
+//  		var InvoiceitemView2=Backbone.View.extend({
+//  		  tagName:'p',
+//  		  className:'item',
+//  		  attributes:{
+//  		   'align':'left',
+//  		   'style':'background:red'	
+//  		  },
+//  		  initialize:function(){
+//  		   this.html="hhhhhh";
+//  		  },
+//  		  render:function(){
+//  		   $(this.el).html(this.html);	
+//  		  }
+//  		});
+//  		
+//  		
+//  		var iiv2=new InvoiceitemView2();
+//  		 
+//  		iiv2.render();
+//  		
+//  		$('body').html(iiv2.el);
+//  		 
+//  		iiv2.remove();
+//  		
+////  		setTimeout('aa()',500);
+////  		 
+////      function aa () {
+////      	alert("Alert text");
+////      	
+////      }
+
+
+//			 																															<table> 
+//			                                                                   <th></th> 
+//			                                                                   <tbody> 
+//			                                                                   		<tr>
+//			                                                                   				<td></td> 
+//			                                                                   		</tr>  
+//			                                                                   </tbody>  
+//			                                                               </table>
+			 
+			 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			 //定义模型
+	     var iitmodel=Backbone.Model.extend({
+	     	 
+	     });
+	     
+	     //定义模型集合
+	     var IIC=Backbone.Collection.extend({
+	       model:iitmodel
+	     });
+			
+			 //定义单个模型的视图
+//			 var IIV=Backbone.View.extend({
+//			  	 tagName:'tr',
+//			  	 render:function(){
+//			  	   $(this.el).html(_.map([
+//			  	    this.model.get("name"),
+//			  	    this.model.get("age")
+//			  	   ]),function(val,key){
+//			  	   	return '<td>'+val+'</td>';
+//			  	   });
+//			  	   
+//			  	   return this;
+//			  	 }
+//			 });
+			 
+			 //定义对集合进行渲染的视图     
+			 var IILV=Backbone.View.extend({
+			 	 tagName:'table',
+			 	 className:'invoice-item-view',
+			 	 render:function(){
+			 	   $(this.el).empty();	
+			 	   
+			 	   $(this.el).append($('<tr></tr>')).html(
+			 	      _.map(['name','age']),
+			 	      function(val,key){
+			 	        return '<th>'+val+'</th>';	
+			 	      }
+			 	   );
+			 	   
+			 	   $(this.el).append(
+			 	   	_.map(
+			 	   		this.collection.models,
+			 	   		function(model,key){
+			 	   	 		return new IIV({model:model}).render().el;
+			 	   		})
+			 	   );
+			 	   
+			 	   return this;
+			 	 }
+			 });
+			 //定义对整个页面进行渲染的视图
+			 var  IILPV=Backbone.View.extend({
+			   render:function(){
+			   	$(this.el).html(new IILV({
+			   		collection:this.collection	
+			   	}).render().el);	
+			   }	
+			 });
+//////			 
+//////			 //实例化模型集合
+//////			 var iic=new IIC([
+//////			 	 {name:"aaa",age:"1111"},
+//////			   {name:"bbb",age:"2222"},
+//////			   {name:"ccc",age:"3333"},
+//////			   {name:"ddd",age:"4444"},
+//////			   {name:"eee",age:"5555"},
+//////			   {name:"ggg",age:"666"}
+//////			 ]);
+//////			 
+//////			 new IIPV({
+//////			 	collection:iic,
+//////			 	el:'body'	
+//////			 }).render();
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+var IIV=Backbone.View.extend({
+	tagName:'tr',
+	renderViewMode:function(){
+		$(this.el).html(_.map([
+			this.model.get('name'),
+			this.model.get('age'),
+			'<button class="edit">edit</button>'
+		]),function(val,key){
+		  return '<td>'+val+'</td>'
+		});
+	},
+	renderEditMode:function(){
+	  $(this.el).html(_.map([
+	  	'<input class="name" value='+this.model.get('name')+'>',
+	  	'<input class="age" value='+this.model.get('age')+'>',
+	  	'<Button class="save">save</button>',
+	  	'<Button class="cancel">cancel</button>'
+	  ]),function(val,key){
+	  	return '<td>'+val+'</td>'
+	  });	
+	},
+	renderCallback:'renderViewMode',
+	render:function(){
+		this[this.renderCallback]();
+		return this;
+	},
+	events:{
+		'click button.edit':'edit',
+		'click button.save':'save',
+		'click button.cancel':'cancel'	
+	},
+	edit:function(){
+		this.renderCallback='renderEditMode';
+		this.render();
+	},
+	save:function(){
+		alert("Alert text");
+		this.model.set({
+			name:$(this.el).find('input.name').val(),
+			age:$(this.el).find('input.age').val()
+		});	
+		this.renderCallback="renderViewMode";
+		this.render();
+	},
+	cancel:function(){
+		this.renderCallback='renderViewMode';
+		this.render();	
+	}
+});																						
+
+var invoiceItemcollection=new IIC([
+			 {name:"aaa",age:"1111"},
+			 {name:"bbb",age:"2222"},
+			   {name:"ccc",age:"3333"},
+			   {name:"ddd",age:"4444"},
+			   {name:"eee",age:"5555"},
+			   {name:"ggg",age:"666"}
+]);
+					
+new IILPV({
+	collection:invoiceItemcollection,
+	el:'body'	
+}).render();						
+				
+
+
+
+
+</script>

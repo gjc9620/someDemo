@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script src="../jquery-2.1.1.min.js"></script>
+<html>
+<head>
+    <title></title>
+</head>
+<style>
+   #div1{
+       width: 500px;
+       height: 300px;
+       background: bisque;
+       margin-top: 100px;
+       margin-left: 100px;
+   }
+    #div2{
+        height: 100%;
+        width: 0px;
+        background: #000000;
+
+    }
+    body{
+        margin: 0px;
+        padding: 0px;
+        border: 0px;
+        height: 1000px;
+    }
+</style>
+<body>
+    <div style="height: 1px"></div>
+    <div id="div1">
+        <div id="div2"></div>
+    </div>
+</body>
+</html>
+
+<script>
+     $div2 = $("#div2");
+     $div1 = $("#div1");
+     $body = $("body");
+     $div1.mousedown(function(){
+         $body.mousemove(function(event){
+
+             $div2.width(event.clientX - $div1.offset().left );
+             if($div1.width() < $div2.width()){
+                 $div2.width($div1.width());
+             }
+
+         });
+
+         $body.mouseup(function(){
+             $body.unbind("mousemove mouseup")
+         })
+     })
+</script>

@@ -1,0 +1,218 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+
+//    var a1= [11,22,33];
+//    a1.forEach(function(
+//            value, //当前遍历到的元素值
+//            index, //当前遍历到的元素的索引
+//            array  //当前元素所在的数组
+//            ){
+//         console.log(value,index,array)  ;
+////       output
+////       11 0 [11, 22, 33]
+////       18 22 1 [11, 22, 33]
+////       18 33 2 [11, 22, 33]
+//    })
+
+////////////////////////////
+//var a1= [11,22,33];
+// a1= a1.map(function(item){
+//    return  item * 2
+//})
+//console.log(a1)  //[22, 44, 66]
+//////////////////////////////////
+//var a1= [11,22,33];
+//
+//a1 = a1.filter(function(item){
+//     if(item>14){return true }
+//     return false
+//})
+//console.log(a1) // [22, 33]
+//////////////////////////////////
+//var tt = [5, 8, 3, 10];
+//var obj =  {
+//    a:10 ,
+//    hehe: function(value){
+//       return this.a * value
+//    }
+//};
+//
+//tt = tt.map(obj.hehe,obj) ;
+//console.log(tt);
+//////////////////////////////////
+//var tt = [64, 9, 81, 49];
+//tt =tt.map(Math.sqrt);
+//console.log(tt);
+/////////////////////////////////
+//var obj  = {
+//    hehe:function(value,index){
+//          console.log(value,index,this.pow(value))
+//    },
+//    pow:function(x){
+//          return x*x
+//    }
+//} ;
+//var tt = [8, 3, 9, 2];
+//tt=tt.forEach(obj.hehe,obj);
+//console.log(tt);
+////8 0 64
+////3 1 9
+////9 2 81
+////2 3 4
+
+
+
+
+//////////////////////////////////
+//var scores = [5, 8, 3, 10];
+//var current = 7;
+//
+//function higherThanCurrent(score) {
+//    return score > current;
+//}
+//
+//if (scores.some(higherThanCurrent)) {
+//    alert("朕准了！");
+//}
+/////////////////////
+
+//function database () {
+//    this.users = ["张含韵", "江一燕", "李小璐"],
+//    this.sendEmail = function (user) {
+//        if (this.isValidUser(user)) {
+//            console.log("你好，" + user);
+//        } else {
+//            console.log("抱歉，"+ user +"，你不是本家人");
+//        }
+//    },
+//    this.isValidUser = function (user) {
+//        return /^张/.test(user);
+//    }
+//};
+//
+//var  a=new database();
+//// 给每个人法邮件
+//console.log(a.users);
+//a.users.forEach(  // database.users中人遍历
+//        a.sendEmail    // 发送邮件
+//        //a               // 使用database代替上面标红的this
+//);
+
+//////////////////////////////////////////////////////////////////////
+//var obj  = {
+//    hehe:function(value,index,array){
+//        return this.rr(value) > 50
+//    },
+//    rr:function(x){
+//          return x*10
+//    }
+//} ;
+//var tt = [8, 3, 9, 2];
+//tt=tt.filter(obj.hehe,obj);
+//console.log(tt); //[8, 9]
+//////////////////////////////////////////////////////////////////////
+//var aa = [22,33,44,55] ;
+//function ab(value){
+//    return value == 22
+//}
+//if(aa.some(ab)){
+//    console.log(true)   //true
+//}else{
+//    console.log(falses)
+//};
+//////////////////////////////////////////////////////////////////////
+//var aa = [22,33,44,55] ;
+//
+//var obj={
+//    bb:22 ,
+//    aa:function(value){
+//      return  this.bb ==value
+//    }
+//}
+//if(aa.some(obj.aa,obj)){
+//    console.log(true)   //true
+//}else{
+//    console.log(falses)
+//};
+//////////////////////////////////////////////////////////////////////
+//var aa =[1,2,3,45,6]
+//
+//var bol=aa.every(function(value){
+//    return value%2 == 0
+//})
+//if(bol){
+//   console.log("全是是双数")
+//}else{
+//    console.log("啊哦有些不是双数")  // 啊哦有些不是双数
+//}
+//////////////////////////////////////////////////////////////////////
+//var  aa =[1,2,3,45,6];
+//var obj= {
+//    aa:2,
+//    test:function(value){
+//         return value%this.aa ==0
+//    }
+//}
+//var bol=aa.every(obj.test,obj);
+//if(bol){
+//   console.log("全是是双数")
+//}else{
+//    console.log("啊哦有些不是双数")  // 啊哦有些不是双数
+//}
+///////////////////////////////////////////////////////////////////////
+//var aa = [22,33,44,55] ;
+//function ab(value){
+//    return value == 22
+//}
+//if(aa.every(ab)){
+//    console.log(true)
+//}else{
+//    console.log(false)//false
+//};
+//////////////////////////////////////////////////////////////////////
+//var a = [1,2,3,4,5,3,3,5];
+//console.log(a.indexOf(3,1));  //2
+//console.log(a.lastIndexOf(2))  //1
+
+//var a = [1,2,3,4,5,3,3,5];
+////var count = 0;
+////b= a.filter(function(value){
+////   if(value==3){count++}
+////})
+//
+//var f = a.lastIndexOf(3); //6
+
+
+
+//////////////////////////////////////////////////////////////////////
+
+//var array = [1, 2, 3];
+//
+//array.delete(0);
+//
+////delete array[1]; // 移除 2
+//alert(array); // "1,,3"
+//
+//alert(array.length); // but the length is still 3
+//
+//array.forEach(alert); // 弹出的仅仅是1和3
+
+
+//////////////////////////////////////////////////////////////////////
+
+//var a1 =[1111,222,33]
+//
+//console.log(a1.infexOf("1"))
+
+
+</script>

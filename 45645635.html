@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+//    function getExplorer() {
+//        var explorer = window.navigator.userAgent ;
+//    //ie
+//        if (explorer.indexOf("MSIE") >= 0) {
+//            alert("ie");
+//        }
+//    //firefox
+//        else if (explorer.indexOf("Firefox") >= 0) {
+//            alert("Firefox");
+//        }
+//    //Chrome
+//        else if(explorer.indexOf("Chrome") >= 0){
+//            alert("Chrome");
+//        }
+//    //Opera
+//        else if(explorer.indexOf("Opera") >= 0){
+//            alert("Opera");
+//        }
+//    //Safari
+//        else if(explorer.indexOf("Safari") >= 0){
+//            alert("Safari");
+//        }
+//    }
+//    if(window.VBArray){
+//        alert("aaa");
+//    }else{
+//        alert("不是ie");
+//    }
+//    getExplorer();
+
+
+//function callMe(arg1, arg2){                todo
+//    var a ="";
+//    a+=   this+"    ";
+//    for(i in arguments){
+//        a += arguments[i]+"       ";
+//    }
+//    return a;
+//
+//}
+//console.log(callMe.apply(333,[44,55]));
+
+
+//document.write("Original function: <br/>");
+//document.write(callMe(1, 2));
+//document.write("<br/>");
+//
+//document.write("Function called with apply: <br/>");
+//document.write(callMe.apply( [ 4, 5 ],[33,44]));
+</script>
+
+
+
+
+<script>
+//    function Person(name,age){   //定义一个类，人类
+//        this.name=name;     //名字
+//        this.age=age;       //年龄
+//        this.sayhello=function(){alert("hello")};
+//    }
+//    function Print(){            //显示类的属性
+//        this.funcName="Print";
+//        this.show=function(){
+//            var msg=[];
+//            for(var key in this){
+//                if(typeof(this[key])!="function"){
+//                    msg.push([key,":",this[key]].join(""));
+//                }
+//            }
+//            alert(msg.join(" "));
+//        };
+//    }
+//    function Student(name,age,grade,school){    //学生类
+//        Person.apply(this,arguments);
+//        Print.apply(this,arguments);
+//        this.grade=grade;                //年级
+//        this.school=school;                 //学校
+//    }
+//    var p1=new Person("jake",10);
+//    p1.sayhello();
+//
+//    var s1=new Student("tom",13,6,"清华小学");
+//    s1.show();
+//    s1.sayhello();
+//    alert(s1.funcName);
+
+    function Person(name){
+        this.name= name;
+//        this.eat = function(a) {
+//            document.writeln(a);
+//        }
+    }
+    Person.prototype.eat=function(food){
+        document.writeln(food);
+
+    } ;
+    function child (name,age){
+        Person.apply(this,arguments),
+        this.age=age
+
+    }
+    child.prototype.fly= function(where){
+       document.writeln(where)
+    } ;
+    child.prototype.eat= function(){
+        document.writeln("asdasdas")
+    } ;
+//
+//
+    var a = new child("pc",123);
+    a.fly("  house") ;
+    a.eat("sweet ")  ;
+
+    var b =new Person();
+    b.eat("1111");
+
+
+//     var a =  Math.min(1,3,7,2,8,8);
+//
+//     var a = [1,3,7,2,8,8] ;
+//
+//     var b=Math.min.apply(null,a)  ;
+//     document.writeln(b);
+//       var arr1=[1,2,3];
+//       var arr2 = [4,5,6] ;
+//       Array.prototype.push.apply(arr1,arr2)
+//       console.log(arr1);
+
+
+
+</script>

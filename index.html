@@ -1,0 +1,155 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <!DOCTYPE html>
+<html>
+	<head>
+	    <title>����΢��</title>  
+	    <script src="lib/jquery-2.1.1.min.js"></script>
+	    <script src="lib/underscore-min.js"></script>
+	    <script src="lib/backbone-min.js"></script>
+	    <script src="lib/backbone.mutators.js"></script>
+	</head>
+	<body>
+		    <a href="file:///Users/fanguohao/Desktop/test/index.html#invoice/333333">adasdadasd </a>
+            <p>&#3599;&#3657;&#3657;&#3657;……;&#3662;&#3662;&#3662;……</p>
+	</body>
+ </html>
+
+<script>
+  
+////  //����һ��ģ��
+////  var model=Backbone.Model.extend({
+////    
+////  });
+////  //����һ����ͼ
+//// 	var view=Backbone.View.extend({
+//// 		el:'body',
+//// 		render:function(){
+//// 			$(this.el).html(this.model.get('name'));	
+//// 		}
+//// 	});
+//// 	
+//// 	//ʵ��һ��ģ��
+//// 	var m1=new model();
+//// 	m1.attributes.name='aaa'; 
+//// 	
+////// 	//ʵ����ͼ
+////// 	var v1=new  view({
+////// 	  model:m1	
+////// 	});
+////// 	v1.render();
+////// 	
+//// 	
+//// 	
+//// 	var Worksapce=Backbone.Router.extend({
+//// 		routes:{
+//// 			'':'invoiceList',
+//// 			'invoice':'invoiceList',
+//// 			'invoice/:id':'invoicePage'
+//// 		},
+//// 		initialize:function(){
+//// 			this.invoiceCollection=new Backbone.Collection.extend([
+//// 				{name:1234},
+//// 				{name:2345},
+//// 				{name:3456},
+//// 				{name:4567}	
+//// 			]);
+//// 		},
+//// 		invoiceList:function(){
+//// 			alert("invoiceList");
+////// 			this.changeView(new view({
+////// 				model:m1
+////// 			}))
+//// 		},
+//// 		invoicePage:function(id){
+//// 			
+//// 			this.changeView(new view({
+//// 				model:new model({ name:this.invoiceCollection.prototype[id].name })
+//// 			}));
+//// 		},
+//// 		changeView:function(view){ 
+//// 			if(this.currentView){
+//// 				if(this.currentView==view){
+//// 						return;
+//// 				}
+//// 				 this.currentView.$el.html("");
+////         this.currentView.stopListening(); 
+//// 			}	
+//// 			view.render();
+//// 			this.currentView=view;
+//// 		}
+//// 	});
+//// 	
+//// 	var aaa=new Worksapce();
+//// 	Backbone.history.start();
+////  
+  		
+  		
+//  		object1={};
+//  		_.extend(object1,Backbone.Events);
+//  		
+//  		var hello =function(msg){
+//  			alert('hello'+msg);	
+//  		};
+//  		
+//  		object1.on("handshake",hello);
+//  		
+//  		object1.trigger("handshake","world");
+//    var workspace=Backbone.Router.extend({
+//        routes:{
+//            '':'invoiceList',
+//            'invoice':'invoiceList',
+//            'invoice/:id':'invoicePage'
+//        },
+//        initialize:function(){
+//            this.on('route:invoicePage',this.invoicePageEvent);
+//        },
+//        invoicePageEvent:function(param1,param2){
+//            console.log(param1);
+//        }
+////        invoicePage:function(){
+////            alert('');
+////        },
+////        invoiceList:function(){
+////            alert("invoiceList");
+////        }
+//    });
+//    var aa=new workspace();
+//     Backbone.history.start();
+//
+     //定义一个user model
+     var user= Backbone.Model.extend({
+
+     });
+     //定义一个collection user
+     var listUser= Backbone.Collection.extend({
+          model:user
+     });
+     //定义一个listuser视图
+     var userListView= Backbone.View.extend({
+          tagName:'ul',
+          template: _.template(
+                  '<% _.each(items,function(item){ %>' +
+                  '<li>'+
+                          'name: <%= item.name %>'+
+                          'age: <%= item.age %>'+
+                  '</li>'+
+                  "<% }) %>"
+          ),
+          render:function(){
+              this.$el.html(this.template({
+                  items:this.collection.toJSON()
+              })) ;
+              return this  ;
+          }
+     });
+
+     var usersview= new userListView({
+         collection:new listUser([
+             {name:'111',age:'hhh'},
+             {name:'222',age:'hhhh'},
+             {name:'333',age:'hhhhh'},
+             {name:'444',age:'hhhhh'}
+         ])
+     });
+$('body').append(usersview.render().el);
+</script>

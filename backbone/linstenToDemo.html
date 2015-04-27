@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/underscore-min.js"></script>
+    <script src="lib/backbone.js"></script>
+</head>
+<body>
+     <div id="div1"></div>
+     <div id="div2"></div>
+</body>
+</html>
+<script>
+   var view1 = Backbone.View.extend({
+       el:"#div1",
+       render:function(){
+           this.listenTo(this.model,"boom",this.haha)
+       },
+       haha:function(act){
+           alert(arguments) ;
+           alert(arguments);
+       }
+   });
+   var model = Backbone.Model.extend({
+
+   });
+
+
+
+   var view2 = Backbone.View.extend({
+       el:"#div2",
+       render:function(){
+           this.model.trigger("boom","asdads","1212123313")
+       }
+   });
+   var model2 = Backbone.View.extend({
+
+   });
+
+
+   var m1 = new model();
+
+   var v1 = new view1({
+       model:m1
+   }).render();
+   var v2 =new view2({
+       model:m1
+   }).render();
+
+
+
+//   var value1 = 0, value2 = 0, value3 = 0;
+//   for ( var i = 1; i <= 3; i++) {
+//       var i2 = i;
+//       (function() {
+//           var i3 = i;
+//           setTimeout(function() {
+//               value1 += i;
+//               value2 += i2;
+//               value3 += i3;
+//           }, 1);
+//       })();
+//   }
+//
+//   setTimeout(function() {
+//       console.log(value1, value2, value3);
+//   }, 100);
+
+</script>

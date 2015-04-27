@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function checkEmptyObj(i){
+        for(var a in i){
+            return false
+        }
+        return true
+    }
+
+    console.log(checkEmptyObj({name:1}))
+    console.log(checkEmptyObj({}))
+</script>

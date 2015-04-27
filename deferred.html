@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="jquery-2.1.1.min.js"  ></script>
+</head>
+
+<body>
+       <div id=“”></div>
+</body>
+</html>
+
+<script>
+
+
+
+
+    var aa =function(){
+        var dtd = $.Deferred();
+        alert("yeah") ;
+
+        setTimeout(function(){ dtd.resolve() },3000) ;       // dtd.resolve() 成功
+                                                 // dtd.reject()  失败
+        return dtd.promise();
+    }
+
+    $.when(
+           aa()
+    ).done(function(){
+                alert("aa")
+            })
+     .fail(function(){
+                 alert("bb")
+            });
+</script>

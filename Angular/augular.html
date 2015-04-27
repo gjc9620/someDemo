@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+    <script src="lib/angular-1.2.5.min.js"></script>
+</head>
+<body>
+
+    <!--<input ng-model="name" type="text"/>-->
+    <!--<p ng-bind="name"></p>-->
+
+    <!--<div ng-app="" ng-init="tt='my name';gg='gjc9620'">-->
+    <!--<div>{{tt + '  ' +  gg}}</div>-->
+    <!--</div>-->
+
+    <!--<div ng-init=' child=[1,23,4] '>-->
+    <!--<div ng-bind="child[0]"></div>-->
+    <!--</div>-->
+
+    <!--<div ng-init =' pp=[3,4,5,1]'>-->
+    <!--<div >{{pp[2]}}</div>-->
+    <!--</div>-->
+
+
+    <!--<div ng-app="" ng-init="tom={name:'alice',age18}">-->
+    <!--<input type="text" ng-model="tom.name"/>-->
+    <!--<div >{{tom.name}}</div>-->
+    <!--</div>-->
+
+    <!--<div ng-app="" ng-init="time=0;range=0">-->
+    <!--<input ng-model="time"/>-->
+    <!--<input ng-model="range"/>-->
+    <!--<div>{{range/time}}</div>-->
+    <!--</div>-->
+
+    <!--<div ng-init="person=[{name:'good',age:123},{name:'bad',age:456},{name:'tt',age:12}]">-->
+    <!--<div ng-repeat=" x in person  ">-->
+    <!--{{x.name+"    "+x.age}}-->
+    <!--</div>-->
+
+    <!--</div>-->
+
+
+    <!--<div ng-app="" ng-controller="tomController">-->
+        <!--<input ng-model="tom.name"/>-->
+        <!--<input ng-model="tom.age"/>-->
+        <!--<div>{{tom.fullname()}}</div>-->
+
+    <!--</div>-->
+
+    <!--<script>-->
+        <!--function tomController($scope){-->
+            <!--$scope.tom = {-->
+               <!--name:"alice",-->
+               <!--age:455  ,-->
+               <!--fullname:function (){-->
+                   <!--var a = $scope.tom;-->
+                   <!--return a.name+"  "+ a.age ;-->
+               <!--}-->
+            <!--}-->
+        <!--}-->
+    <!--</script>-->
+
+    <!--<div ng-app="" ng-controller="tomController">-->
+           <!--<input ng-model="tom.name"/>-->
+          <!--<input ng-model="tom.age"/>-->
+           <!--<div>{{tom.fullname()}}</div>-->
+    <!--</div>-->
+    <!--<script>-->
+        <!--function tomController($scope){-->
+             <!--$scope.tom={-->
+                 <!--name:"alice",-->
+                 <!--age:50-->
+             <!--};-->
+             <!--$scope.tom.fullname =function(){-->
+                 <!--return $scope.tom.name+"  "+$scope.tom.age;-->
+             <!--}-->
+        <!--}-->
+    <!--</script>-->
+
+
+
+    <!--<div ng-app="" ng-controller="peopleController">-->
+        <!--<div ng-repeat=" x in people  ">-->
+              <!--<div>{{x.name+"   "+x.age}}</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--<script src="app.js"></script>-->
+
+    <!--&lt;!&ndash;以下为app.js的内容&ndash;&gt;-->
+    <!--<script>-->
+        <!--function peopleController($scope){-->
+            <!--$scope.people=[-->
+                <!--{name:"aaa",age:12},-->
+                <!--{name:"bbb",age:13},-->
+                <!--{name:"ccc",age:14}-->
+            <!--];-->
+        <!--}-->
+    <!--</script>-->
+
+
+    <!--<div ng-app="" ng-controller="peopleController">-->
+          <!--<div>{{name|uppercase}}</div>-->
+    <!--</div>-->
+    <!--<script>-->
+        <!--function peopleController($scope){-->
+            <!--$scope.name="tom"-->
+        <!--}-->
+    <!--</script>-->
+
+
+   <!--<div ng-app="" ng-controller="people">-->
+       <!--<div>{{name|lowercase}}</div>-->
+   <!--</div>-->
+   <!--<script>-->
+       <!--function people ($scope ){-->
+           <!--$scope.name="TOM"-->
+       <!--}-->
+   <!--</script>-->
+
+
+   <!--<div ng-app ng-controller="people">-->
+        <!--<div>{{price|currency}}</div>-->
+    <!--</div>-->
+    <!--<script>-->
+        <!--function people ($scope){-->
+            <!--$scope.price=3000;-->
+        <!--}-->
+    <!--</script>-->
+
+
+    <!--<div ng-app="" ng-controller="peopleController">-->
+         <!--<div ng-repeat="x in people | orderBy:'name' ">-->
+             <!--{{x.name}}-->
+         <!--</div>-->
+    <!--</div>-->
+    <!--<script>-->
+        <!--function peopleController ($scope){-->
+             <!--$scope.people=[-->
+                 <!--{name:"tom"},-->
+                 <!--{name:"alice"},-->
+                 <!--{name:"jack"}-->
+             <!--];-->
+        <!--}-->
+    <!--</script>-->
+
+
+
+   <!--<div ng-app="" ng-controller="peopleController">-->
+       <!--<input ng-model="name"/>-->
+        <!--<div ng-repeat="x in people | orderBy:'name' | filter : name ">-->
+               <!--{{x.name}}-->
+        <!--</div>-->
+   <!--</div>-->
+    <!--<script>-->
+        <!--function peopleController($scope){-->
+            <!--$scope.people=[-->
+                <!--{name:"tom"},-->
+                <!--{name:"alice"},-->
+                <!--{name:"jack"}-->
+            <!--];-->
+        <!--}-->
+    <!--</script>-->
+
+    <!--<style>-->
+        <!--table, th , td  {-->
+            <!--border: 1px solid grey;-->
+            <!--border-collapse: collapse;-->
+            <!--padding: 5px;-->
+        <!--}-->
+        <!--table tr:nth-child(odd)	{-->
+            <!--background-color: #f1f1f1;-->
+        <!--}-->
+        <!--table tr:nth-child(even) {-->
+            <!--background-color: #ffffff;-->
+        <!--}-->
+    <!--</style>-->
+
+   <!--<div ng-app="" ng-controller="peopleController">-->
+        <!--<table >-->
+            <!--<tr ng-repeat=" x in people | orderBy:'Country' ">-->
+                <!--<td>{{x.Name}}</td>-->
+                <!--<td>{{x.Country | uppercase}}</td>-->
+            <!--</tr>-->
+
+        <!--</table>-->
+   <!--</div>-->
+
+    <!--<script>-->
+        <!--function peopleController($scope,$http){-->
+
+
+            <!--$http.get("http://192.168.21.24:3030",{-->
+<!--//                "Content-Type": "application/x-javascript"-->
+            <!--}).success(function(response){-->
+                        <!--console.log(response);-->
+                        <!--$scope.people= response;-->
+            <!--});-->
+
+
+        <!--}-->
+    <!--</script>-->
+
+
+
+    <!--<div ng-app="" app-controller="people">-->
+         <!--<button ng-show="haha > 123 " >333</button>-->
+         <!--<input type="text" ng-model="haha" />-->
+         <!--{{haha}}-->
+    <!--</div>-->
+
+
+
+   <!--<div ng-app="" ng-controller="count">-->
+
+        <!--<button ng-click="count = count+1 ">33</button>-->
+       <!--{{count}}-->
+   <!--</div>-->
+
+   <!--<script>-->
+       <!--function count($scope){-->
+             <!--$scope.count=1;-->
+       <!--}-->
+   <!--</script>-->
+
+   <!--<div ng-app="" ng-controller="peopleController">-->
+       <!--<button ng-click="toggle()">123</button>-->
+       <!--<div ng-hide="myVar">{{people.name+"  "+people.age}}</div>-->
+   <!--</div>-->
+
+   <!--<script>-->
+       <!--function peopleController ($scope){-->
+           <!--$scope.people={name:123,age:999} ;-->
+           <!--$scope.myVar=false;-->
+           <!--$scope.toggle = function(){-->
+               <!--$scope.myVar =!$scope.myVar;-->
+           <!--}-->
+
+       <!--}-->
+   <!--</script>-->
+
+   <!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+   <!--<div ng-app=""  ng-controller="myController">-->
+         <!--{{name+"   "+age}}-->
+   <!--</div>-->
+   <!--<script>-->
+
+       <!--function myController($scope){-->
+           <!--$scope.name = "aa";-->
+           <!--$scope.age = "bb"-->
+       <!--}-->
+   <!--</script>-->
+
+   <!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+   <!--<div ng-app="myApp" ng-controller="people">-->
+        <!--{{name+"   "+age}}-->
+   <!--</div>-->
+
+   <!--<script>-->
+       <!--var app= angular.module("myApp",[]);-->
+       <!--app.controller("people",function($scope){-->
+           <!--$scope.name=123;-->
+           <!--$scope.age=123;-->
+       <!--});-->
+   <!--</script>-->
+
+    <!--<div ng-app="myApp" ng-controller="myCtrl">-->
+        <!--{{ firstName + " " + lastName }}-->
+    <!--</div>-->
+
+    <!--<script>-->
+        <!--var app = angular.module("myApp", []);-->
+        <!--app.controller("myCtrl", function($scope) {-->
+            <!--$scope.firstName = "John";-->
+            <!--$scope.lastName = "Doe";-->
+        <!--});-->
+    <!--</script>-->
+
+    <!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+
+    <!--<div ng-app="myApp" ng-controller="userController">-->
+         <!--<from>-->
+             <!--<input type="text"  ng-model="user.name" />   &lt;!&ndash;绑定模型user.name&ndash;&gt;-->
+             <!--<input type="text"  ng-model="user.age" />     &lt;!&ndash;绑定模型user.age&ndash;&gt;-->
+             <!--<button ng-click="retest()">retest</button>-->
+         <!--</from> <br/>-->
+         <!--{{user}} <br/>-->
+         <!--{{master}}-->
+    <!--</div>-->
+    <!--<script>-->
+        <!--var myApp = angular.module("myApp",[]);-->
+        <!--myApp.controller("userController",function($scope){-->
+            <!--var startValue ={name:"gg",age:12};   //设置初始值-->
+
+            <!--$scope.user=  angular.copy(startValue);         //页面显示的初始值-->
+            <!--$scope.master = angular.copy(startValue ) ;    //初始模型-->
+
+            <!--$scope.retest=function (){-->
+                <!--$scope.user= angular.copy($scope.master);  //变回你原来的样子-->
+            <!--}-->
+        <!--});-->
+
+    <!--</script>-->
+
+    <!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+
+
+    <form ng-app="" ng-controller="validateCtrl" name="myForm" novalidate>
+
+        <p>Username:<br>
+            <input type="text" name="user" ng-model="user" ng-minlength="3" required>
+            <span style="color:red" >{{myForm.user.$invalid + "  "+  myForm.user.$error.required}}</span>
+        </p>
+
+        <p>Email:<br>
+            <input type="email" name="email" ng-model="email" required>
+            <span >{{myForm.email.$pristine}}</span>
+        </p>
+
+        <p>
+            <input type="submit"  ng-disabled="myForm.user.$dirty && myForm.user.$invalid ||  myForm.email.$dirty && myForm.email.$invalid">
+        </p>
+
+    </form>
+
+    <script>
+        function validateCtrl($scope) {
+            $scope.user = 'John Doe';
+            $scope.email = 'john.doe@gmail.com';
+        }
+    </script>
+
+    <!--$dirty 是否已经验证-->
+    <!--$pristione 是否已经修改-->
+    <!--$invalid 验证是否已经通过-->
+    <!--required 必填-->
+
+
+
+
+</body>
+</html>
+
+<!--<script src="Angular1.js"></script>-->
+<!--<script src="Angular2.js"></script>-->
+<script>
+
+</script>
