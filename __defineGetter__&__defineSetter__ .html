@@ -1,0 +1,44 @@
+<script>
+//    function People  (){
+//
+//    }
+//
+//    People.prototype.__defineGetter__("_Name_",function(){
+//        return "--"+this.name+"--";
+//    });
+//
+//    People.prototype.__defineSetter__("fullName",function(x){
+//        this.name = "tom " + x;
+//    });
+//
+//    var people = new People();
+//    people.fullName="jack";
+//    alert(people._Name_);   //--tom jack--
+//
+//
+     var o = {
+        value:9,
+        get get() {return this.value+1;},
+        set set(x) {this.value = x + 1;}
+     }
+     o.set = 10;
+     alert(o.get)  //12
+
+      function P(value){
+          var value = value;
+          this.__defineSetter__("set",function(v){ value= v  });
+          this.__defineGetter__("get",function(){return value})
+      }
+      var p = new P(100);
+      console.log(p.__lookupGetter__("get").toString());
+      console.log(p.__lookupSetter__("set").toString());
+
+//console.log(o.__lookupSetter__("set").toString());
+//console.log(o.__lookupGetter__("get").toString());
+//      alert(p.get);
+//      p.set =  20;
+//      alert(p.get);
+//      alert(p.value);
+
+
+</script>
