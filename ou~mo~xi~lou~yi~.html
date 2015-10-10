@@ -26,4 +26,58 @@
 //console.log(num.valueOf()); //输出：123
 //console.log(num.valueOf()); //输出：'number'
 
+
+//    Function.prototype.bind = function(){
+//         var self = this,
+//             context  = Array.prototype.shift.apply(arguments),
+//             args = Array.prototype.slice.apply(arguments);
+//
+////         console.log(context);
+//         return function(){
+//             return self.apply(context,Array.prototype.concat.apply(args,Array.prototype.slice.apply(arguments)))
+//         }
+//
+//     }
+//
+//    var obj = {
+//        name:33
+//    }
+//
+//     var fun = function (a,b,c,d){
+//
+////         console.log(this.name);
+//         console.log(arguments);
+//
+//     }
+//      fun = fun.bind(obj,1,2)
+//
+//      fun = fun.bind(obj,4);
+//      fun = fun.bind(obj,4);
+//      fun = fun.bind(obj,99);
+//
+//      fun(5);
+
+
+
+
+
+//
+//
+//"use strict";
+//var a  ={
+//    "0":"111",
+//    "1":"adada",
+//    "2":"08",
+//    length:3
+//}
+//
+//function myFunction() {
+//
+//    var gg = Array.prototype.slice.apply(a)   ;
+//    console.log(gg[0])
+//
+//}
+//myFunction()
+
+
 </script>

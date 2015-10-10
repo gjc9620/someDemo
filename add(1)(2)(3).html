@@ -1,0 +1,21 @@
+<script>
+
+    function add(x){
+        var sum = 0;
+        function _add (num){
+            sum =  num + sum;
+            return  _add
+        }
+
+        _add.toString = function(){
+            return sum
+        }
+
+        _add(x)
+
+        return  _add
+
+    }
+
+    alert( add(2)(3)(7) )
+</script>

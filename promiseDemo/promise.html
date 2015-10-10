@@ -1,0 +1,57 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title> </title>
+    </head>
+
+</html>
+
+<script>
+
+         var  Dog = function(){
+             this.run = "runrunrun"
+//             this.fly  =   function (){
+//                console.log("aa")
+//             }
+
+         }
+         Dog.prototype.fly = function (){
+             console.log("aa")
+         }
+
+
+         var  bigDog = function(){
+             this.constructor = new Dog();
+         }
+
+
+
+         console.log(new bigDog());
+//
+//    function Person(name,age){
+//        this.name=name;
+//        this.age=age;
+//    }
+//    Person.prototype.sayHello=function(){
+//        alert("使用原型得到Name："+this.name);
+//    }
+//    var per=new Person("马小倩",21);
+
+
+//    per.sayHello(); //输出：使用原型得到Name:马小倩
+//
+//
+//    function Student(){
+//
+//    }
+//    Student.prototype=new Person("洪如彤",21);
+//    var stu=new Student();
+//    Student.prototype.grade=5;
+//    Student.prototype.intr=function(){
+//        alert(this.grade);
+//    }
+//    stu.sayHello();//输出：使用原型得到Name:洪如彤
+//    stu.intr();//输出：5
+</script>
+

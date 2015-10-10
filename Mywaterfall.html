@@ -1,0 +1,85 @@
+<script>
+
+
+
+//    var f3 = {
+//        fun:function(v){
+//            console.log(v)
+//        }
+//    }
+//    var  f2 = {
+//        fun:function(v){
+//            this.cb.fun(v+1)
+//        } ,
+//        cb:f3
+//    }
+//    var f1 ={
+//        fun:function(){
+//            this.cb.fun(1)
+//        },
+//        cb:f2
+//    }
+//
+//    f1.fun()
+//    Mywaterfall ={
+//        obj:function obj (fun){
+//            this.fun = fun
+//        },
+//        go:function  (){
+//            var list = [].slice.call(arguments) ;
+//            list[0] =  new Mywaterfall.obj(list[0]);
+//
+//            list.forEach(function(v,i){
+//                v.cb = list[i+1]= new Mywaterfall.obj(list[i+1]);
+//            })
+//            list[0].fun();
+//        }
+//    }
+//
+//    Mywaterfall.go(
+//            function(){
+//                this.cb.fun(null,3)
+//            },
+//            function(err,value){
+//                if(err){
+//                  return
+//                }
+//
+//                this.cb.fun("err",3)
+//            } ,
+//            function(err,value){
+//
+//                if(err){
+//                    console.log(err)
+//                    return
+//                }
+//
+//                console.log(value)
+//            }
+//    )
+
+//    Mywaterfall.go(
+//
+//        function(){
+//            this.cb.fun(3)
+//        },
+//        function(v){
+//            var that = this
+//            setTimeout(function(){
+//                that.cb.fun(v+1)
+//            },3000)
+//        },
+//        function(v){
+//            var that = this
+//            setTimeout(function(){
+//                that.cb.fun(v+1)
+//            },3000)
+//        },
+//        function(v){
+//            console.log(v);
+//        }
+//
+//    )
+
+
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+//    Promise.reject("badEnd")
+//           .then(function(v){
+//               alert(v)
+//           })
+//           .catch(function(e){
+//               console.log(e)
+//           })
+//
+//    Promise.reject("badEnd")
+//            .then(function(v){
+//                alert(v)
+//            },function(e){
+//                console.log(e)
+//            })
+
+    Promise.reject(new Error("badEnd"))
+            .then(function(v){
+                alert(v)
+            })
+            .catch(function(e){
+                console.log(e)   //reject.html:31 Error: badEnd(…)
+            })
+
+    Promise.reject(new Error("badEnd"))
+            .then(function(v){
+                alert(v)
+            },function(e){
+                console.log(e)  //reject.html:31 Error: badEnd(…)
+            })
+</script>

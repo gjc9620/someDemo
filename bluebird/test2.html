@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="bluebird.min.js"></script>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+     var p1 = new  P (function(fulfill,reject){
+         fulfill(1)
+     });
+
+     p1.
+     then(function (v){
+         alert(1)
+         throw 2
+
+     },alert).
+     then(function(v){
+         alert(2)
+
+     }).
+     catch(function(e){
+         alert(3);
+     })
+</script>

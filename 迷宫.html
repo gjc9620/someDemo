@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+<pre style='line-height:1'>
+<script>
+    d=document;
+    for(i=1;i<4001;i++){
+        r=Math.random();
+        d.write(r<.1?" ":r<.6?"\u2571":"\u2572");
+        d.write(i%80?"":"\n")
+    }
+</script>
+
+</body>
+</html>

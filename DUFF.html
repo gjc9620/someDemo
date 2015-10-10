@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+//    function process(v) {
+//        Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+//        Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+//        Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+//        Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+//        Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+//        Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+//        Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+//        Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+//        Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+//        Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+//        Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+//        Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+//        Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+//        Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+//        Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+//        Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+//        Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+//        Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+//        Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+//        Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+//        Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+//    }
+//    var values = [ ];
+//    for(var i = 0;i<10000000;i++ ){
+//        values.push(i)
+//    }
+//
+//
+//    var dd = 0;
+//    for(var i = 0 ;i<100;i++){
+//
+//        var d1 =  Date.now()
+//        var iterations = Math.ceil(values.length / 8);
+//        var startAt = values.length % 8;
+//        var i = 0;
+//        do {
+//            switch(startAt) {
+//                case 0 : process(values[i++]);
+//                case 7 : process(values[i++]);
+//                case 6 : process(values[i++]);
+//                case 5 : process(values[i++]);
+//                case 4 : process(values[i++]);
+//                case 3 : process(values[i++]);
+//                case 2 : process(values[i++]);
+//                case 1 : process(values[i++]);
+//            }
+//            startAt = 0;
+//        }while(--iterations);
+//
+//        var d2 =   Date.now()
+//        dd = dd + d2 - d1
+//
+//    }
+//    console.log(dd/100)    ///242.47
+//-------------------------------------
+
+    function process(v) {
+                Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+                Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+                Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+                Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+                Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+                Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+                Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+                Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+                Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+                Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+                Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+                Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+                Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+                Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+                Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+                Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+                Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+                Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+                Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+                Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+                Math.sqrt(  Math.ceil( Math.pow(v+v*2,8) )  )
+    }
+    var values = [ ];
+    for(var i = 0;i<10000000;i++ ){
+        values.push(i)
+    }
+
+
+    var dd = 0;
+    for(var i = 0 ;i<100;i++){
+
+        var d1 =  Date.now()
+        for(var i = 0 ;i<10000000;i++){
+            process(values[i])
+        }
+        var d2 =   Date.now()
+        dd = dd + d2 - d1
+
+    }
+    console.log(dd/100)
+</script>

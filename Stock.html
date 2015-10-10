@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<style>
+    img{
+        width: 1300px;
+    }
+    h1{
+        color: red;
+        font-family: "Microsoft Yahei";
+        font-size: 20;
+    }
+</style>
+<body align="center">
+    <h1 >上海金桥股份有限公司 股票信息</h1>
+    <hr>
+    <img src="http://image.sinajs.cn/newchart/daily/n/sh603918.gif">    
+</body>
+</html>
+<script>
+    setInterval(function(){
+        document.getElementsByTagName("body").html = '<img src="http://image.sinajs.cn/newchart/daily/n/sh603918.gif">'
+        console.log("aa")
+    },2000)
+</script>

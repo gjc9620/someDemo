@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="bluebird.min.js"></script>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+     function myTimeOut (fulfilled,rejected){
+
+     }
+
+     var p1 = new P(function (fulfilled,rejected){
+
+        setTimeout(function(){
+            throw new Error("errrrr")
+            fulfilled(1)
+        },100)
+
+     })
+
+
+
+     p1.then(function(value){
+
+
+         return new P(function(fulfuilled,rejected){
+             setTimeout(function(){
+
+                 fulfuilled(value + 2)
+             },100)
+         })
+
+
+     }).catch(function(err){
+
+         console.log(err)
+     })
+
+
+//     .then(function(value){
+//
+//         return value * 2
+//
+//     }).then(function(value){
+//
+//
+//         console.log(value)
+//
+//     })
+
+
+
+
+</script>
