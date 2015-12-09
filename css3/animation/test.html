@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+        }
+        #myDiv{
+            height:100px;
+            background:red;
+
+            /*-moz-animation:myfirst 5s; !* Firefox *!*/
+            /*-webkit-animation:myfirst 5s; !* Safari and Chrome *!*/
+            /*-o-animation:myfirst 5s; !* Opera *!*/
+            /*animation:myfirst 10s;*/
+        }
+        #cool{
+            position: fixed;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+            margin: auto;
+
+            height: 50px;
+            width: 50px;
+        }
+
+        /*@keyframes myfirst{*/
+            /*0%   {width: 700px;}*/
+
+            /*100% {width: 500px}*/
+        /*}*/
+    </style>
+</head>
+<body>
+    <div id="myDiv">
+        <div style="height: 100px; background: red"></div>
+        <div style="height: 100px; background: blue"></div>
+        <div style="height: 100px; background: darkblue"></div>
+        <div style="height: 100px; background: firebrick"></div>
+        <div style="height: 100px; background: hotpink"></div>
+        <div style=" background: #000000; opacity: 0.5" id="cool"></div>
+
+    </div>
+</body>
+</html>
