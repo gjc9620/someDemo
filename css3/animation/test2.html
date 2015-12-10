@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+        }
+        #cool{
+            position: fixed;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+            /*margin: auto;*/
+
+            /*height: 50px;*/
+            /*width: 50px;*/
+        }
+        #myDiv{
+            height: 75%;
+            background: pink;
+            z-index: 1;
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            /*animation: go 0.5s;*/
+            /*animation-fill-mode:forwards;*/
+        }
+
+        #pic{
+            width: 100px;
+            height:100px;
+            background-color: #0B90C4;
+            margin: -20px 0px 0px 10px;
+        }
+        /*.gohome{*/
+            /*animation-fill-mode: forwards;*/
+            /*animation: gohome 0.5s;*/
+        /*}*/
+        @keyframes go{
+            0% {}
+            100% {top:25%}
+        }
+        @keyframes gohome{
+            0% {top:25%}
+            100% {top:100%}
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function aaa (){
+            var pic = document.getElementById("myDiv");
+            pic.style.animation = "go  2s";
+            pic.style.animationFillMode = "forwards";
+        }
+        function bbb (){
+            var pic = document.getElementById("myDiv");
+            pic.style.animation = "gohome  2s";
+            pic.style.animationFillMode = "forwards";
+        }
+        function ccc (){
+            var pic = document.getElementById("myDiv");
+//            pic.className = "gohome"
+
+            pic.style.animationPlayState = "paused";
+//            pic.style.animation = "go 2s";
+//            pic.style.animationFillMode = "forwards";
+        }
+        function ddd (){
+            var pic = document.getElementById("myDiv");
+            pic.style.animationPlayState = "running";
+        }
+    </script>
+
+    <div id="myDiv">
+        <div id="pic"></div>
+    </div>
+    <!--<div style=" background: #000000; opacity: 0.5" id="cool"></div>-->
+    <input type="button" onclick="aaa()" value="aaaa"/>
+    <input type="button" onclick="bbb()" value="bbbb"/>
+    <input type="button" onclick="ccc()" value="cccc"/>
+    <input type="button" onclick="ddd()" value="dddd"/>
+</body>
+<script>
+
+</script>
+</html>
