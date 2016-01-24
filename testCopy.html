@@ -1,0 +1,61 @@
+<!Document>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div id ="bbbb">大大大叔身份水电费少时诵诗书</div>
+        <input id ="in" value="大大大叔身份水电费少时诵诗书">
+        <div id ="AA">click</div>
+    </body>
+    <script>
+        function select(element) {
+            var selectedText;
+
+            if (element.nodeName === 'INPUT' || element.nodeName === 'TEXTAREA') {
+                element.focus();
+                element.setSelectionRange(0, element.value.length);
+
+                selectedText = element.value;
+            }
+            else {
+                if (element.hasAttribute('contenteditable')) {
+                    element.focus();
+                }
+
+                var selection = window.getSelection();
+                var range = document.createRange();
+
+                range.selectNodeContents(element);
+                selection.removeAllRanges();
+                selection.addRange(range);
+
+                selectedText = selection.toString();
+            }
+
+            return selectedText;
+        }
+        var bbbb = document.getElementById("bbbb");
+
+        bbbb.oncopy = function(event) {
+            if (event.clipboardData) {
+                event.preventDefault();
+                event.clipboardData.setData(
+                        'text/xcustom', 'Added this custom data at copy');
+
+                var setStatus = event.clipboardData.setData(
+                        'text/plain', 'This is not the text you copied, it ' +
+                        'was changed by the copy event handler');
+            }
+//            console.log(select(bbbb));
+            return true
+        };
+
+        var AA = document.getElementById("AA");
+        AA.onclick = function(ev) {
+            var copyTextarea = document.getElementById("in");
+            copyTextarea.select();
+            document.execCommand("copy");
+        };
+    </script>
+</html>
