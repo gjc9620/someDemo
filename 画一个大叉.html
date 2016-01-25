@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>X</title>
+    <style>
+        #cool{
+            position: relative;
+            display: inline;
+            top: 100px;
+            left: 100px;
+        }
+        #left{
+            position: absolute;
+            left: 100px;
+            top: 40px;
+            height: 120px;
+            border-right: 3px solid black;
+            transform: rotate(45deg);
+            transform-origin: 50% 50%;
+        }
+        #right{
+            position: absolute;
+            height: 120px;
+            left: 100px;
+            top: 40px;
+            border-right: 3px solid black;
+            transform: rotate(-45deg);
+            transform-origin: 50% 50%;
+        }
+        #ro{
+            position: absolute;
+            height: 200px;
+            width: 200px;
+            border: 2px solid black;
+            border-radius:100px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="cool">
+        <span id="left"></span>
+        <span id="right"></span>
+        <span id="ro"></span>
+    </div>
+</body>
+</html>
