@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+</head>
+<style>
+    .back{
+        box-shadow: 0 1px 3px rgba(0,0,0,.5);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%) ;
+        width: 30%;
+        height: 30%;
+    }
+    img{
+        position: absolute;
+        width: 100px;
+        /*top: 0px;*/
+        /*left: 0px;*/
+        bottom: 0px;
+    }
+    .rotate1{
+        width: 100%;
+        height:100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        /*transform: rotateY(-193deg);*/
+        perspective: 800px;
+        transform-style: preserve-3d;
+        box-shadow: 0 1px 3px rgba(0,0,0,.5);
+    }
+</style>
+<body>
+    <section class="back">
+        <section class="rotate1">
+            <img src="1.jpg" style="transform: rotateY(0deg) translateZ(200px)">
+            <img src="2.jpg" style="transform: rotateY(36deg) translateZ(200px) ">
+            <img src="3.jpg" style="transform: rotateY(72deg) translateZ(200px) ">
+            <img src="1.jpg" style="transform: rotateY(108deg) translateZ(200px) ">
+            <img src="2.jpg" style="transform: rotateY(144deg) translateZ(200px) ">
+            <img src="3.jpg" style="transform: rotateY(180deg) translateZ(200px) ">
+            <img src="1.jpg" style="transform: rotateY(216deg) translateZ(200px) ">
+            <img src="2.jpg" style="transform: rotateY(253deg) translateZ(200px) ">
+            <img src="3.jpg" style="transform: rotateY(288deg) translateZ(200px) ">
+            <img src="1.jpg" style="transform: rotateY(324deg) translateZ(200px) ">
+
+        </section>
+    </section>
+</body>
+</html>
+<script>
+//    var imgs = document.getElementsByTagName("img");
+//    imgs = [].slice.call(imgs);
+//    console.log(imgs);
+//    img.forEach((v, i, a)=>{
+//        v.style.transition="rotateY(0deg)  translateZ(195.839px)"
+//    })
+
+</script>
