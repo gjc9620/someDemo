@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+</head>
+<style>
+    .demo{
+
+    }
+    .stage_area{
+        width: 900px;
+        min-height: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 100px 50px;
+        background-color: #f0f0f0;
+        box-shadow: inset 0 0 3px rgba(0,0,0,.35);
+        perspective: 800px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .container{
+        width: 128px;
+        height: 100px;
+        margin-left: -64px;
+        -webkit-transition: -webkit-transform 1s;
+        -moz-transition: -moz-transform 1s;
+        transition: transform 1s;
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        position: absolute;
+        left: 50%;
+    }
+    img{
+        width: 128px;
+        box-shadow: 0 1px 3px rgba(0,0,0,.5);
+        -webkit-transition: opacity 1s, -webkit-transform 1s;
+        -moz-transition: opacity 1s, -moz-transform 1s;
+        transition: opacity 1s, transform 1s;
+        position: absolute;
+        bottom: 0;
+    }
+</style>
+<body>
+    <div class="stage_area">
+        <div id="stage" class="container">
+            <img src="3.jpg">
+            <img src="1.jpg">
+            <img src="2.jpg">
+            <img src="3.jpg">
+            <img src="1.jpg">
+            <img src="2.jpg">
+            <img src="3.jpg">
+            <img src="1.jpg">
+            <img src="1.jpg">
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var imgs = document.getElementsByTagName("img");
+    imgs = [].slice.call(imgs);
+    var deg = 0;
+    imgs.forEach((v, i, a)=>{
+        v.style.transform = " rotateY("+deg+"deg)  translateZ(195.839px)";
+        deg += 40;
+    })
+
+</script>
