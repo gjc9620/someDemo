@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BFC</title>
+</head>
+<style>
+    body {
+        width: 300px;
+        position: relative;
+    }
+
+    .aside {
+        width: 100px;
+        height: 100px;
+        float: left;
+        background: #f66;
+    }
+
+    .main {
+        height: 200px;
+        background: #fcc;
+        overflow: hidden;
+    }
+</style>
+<body>
+    <div class="aside">aaaaa</div>
+    <div class="main">vv</div>
+</body>
+</html>
