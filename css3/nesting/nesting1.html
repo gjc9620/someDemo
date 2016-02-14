@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        html,body{
+            padding: 0px;
+            margin: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
+        #div1
+        {
+            padding:50px;
+            border: 1px solid black;
+            perspective: 100px;
+            perspective-origin: 50% 50%;
+        }
+
+        #div2
+        {
+            /*padding:50px;*/
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            background-color: red;
+            transform-style: preserve-3d;
+        }
+
+        #div3
+        {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left:0px;
+            top:0px;
+            border: 1px solid black;
+            background-color: yellow;
+
+            /*transform: rotateY(-100deg);*/
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="div1">
+    <div id="div2">HELLO
+        <div id="div3">YELLOW</div>
+    </div>
+</div>
+
+</body>
+</html>
+
+
