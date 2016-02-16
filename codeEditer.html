@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>codeEditer</title>
+</head>
+<style>
+    body{
+        font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    }
+    .codeBox{
+        background: #E7E5DC;
+    }
+    .codeRow li{
+
+        border-left: 3px greenyellow solid;
+        padding-left: 10px;
+        list-style: decimal-leading-zero;
+        list-style-position: outside;
+        /*margin-left: 8px;*/
+    }
+    .codeRow{
+        margin: 0;
+    }
+    .info{
+        margin-left: 40px;
+        border-left: 3px greenyellow solid;
+        padding: 10px;
+    }
+    .codeRow li:nth-child(even){
+        background: #f3e7f5;
+    }
+    .codeRow li:nth-child(odd){
+        background: #f5f5f5;
+    }
+
+</style>
+<body>
+    <div class="codeBox">
+        <div class="info">lan:javascript</div>
+        <ol class="codeRow">
+            <li>function fun() {</li>
+            <li>&nbsp;&nbsp;&nbsp;console.log(111)</li>
+            <li>}</li>
+            <li>function fun() {</li>
+            <li>&nbsp;&nbsp;&nbsp;console.log(111)</li>
+            <li>}</li>
+        </ol>
+    </div>
+
+</body>
+</html>
