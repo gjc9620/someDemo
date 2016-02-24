@@ -10,10 +10,38 @@
     -->
     <div class="row">
         <ul class="nav navbar-nav">
-            <li> Home </li>
-            <li> About </li>
-            <li> Contact </li>
+            <li>Home </li>
+            <li>About </li>
+            <li>Contact </li>
         </ul>
+    </div>
+    <div id="now">
+
     </div>
 </body>
 </html>
+<script>
+    window.addEventListener("popstate", function() {
+        var currentState = history.state;
+        console.log(arguments)
+        /*
+         * 该干嘛干嘛
+         */
+        var now = document.getElementById("now");
+        now.innerHTML = location.search;
+    });
+    var liList = [].slice.apply(document.getElementsByTagName("li"));
+    var query = location.href.split("?")[1];
+    //第一次没有参数时
+    if(!location.search){
+        history.replaceState({},null, location.href.split("?")[0] + "?page=" + liList[0].innerHTML)
+    }
+    //循坏click
+    for(var i =0;i<liList.length;i++){
+        liList[i].addEventListener("click",function() {
+            history.pushState({}, null, location.href.split("?")[0] + "?page=" + this.innerHTML);
+            console.log(this.innerHTML, location.href.split("?")[0] + "?" + "1");
+        })
+    }
+
+</script>
