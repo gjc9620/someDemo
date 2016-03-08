@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var a = {};
+    var b = {a:1};
+    var c = {};
+    var list = [a, b, c];
+    function isEnpty(obj){
+        for(var i in obj ){
+            return false
+        }
+        return true
+    }
+    function push(arr){
+        for( var i in arr){
+            return i
+        }
+        return null;
+    }
+    push(list);
+    console.log((!!Object.keys(a).length && a) || (!!Object.keys(b).length && b) || (!!Object.keys(c).length && c));
+
+</script>
