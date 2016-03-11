@@ -12,4 +12,12 @@
     var createArray = (s, e)=>{
         return Object.keys(new Array(e+2).fill(0)).map(v=>+v).slice(s,e+1)
     }
+
+    var BTcreateArray = (s, e)=>{
+        if(s === e) return [s]
+        return [e].concat(BTcreateArray(s,--e))
+    }
+//    1 3 [1]
+//    1 2 [] [1]
+//    1 1 [1]
 </script>
