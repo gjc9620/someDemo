@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    window.onerror=fnErrorTrap;
+    function fnErrorTrap(sMsg,sUrl,sLine){
+        console.log(arguments);
+        return false;
+    }
+    function fnThrow(){
+        eval(oErrorCode.value);
+    }
+
+
+    (function aa(){
+        a();
+    })();
+</script>
