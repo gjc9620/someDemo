@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+  let user = [
+    {
+      name: "tom",
+      age: 12
+    },
+    {
+      name: "jack",
+      age:14
+    }
+  ]
+  const selectData1 = function (value) {
+    return callback=>{
+
+      setTimeout(()=>{
+        callback(null, "Tom"+value);
+      }, 1000)
+    }
+  };
+
+  const selectData2 = function (value) {
+    return callback => {
+      setTimeout(()=>{
+        callback(null ,"jack"+value)
+      }, 2000)
+    }
+  }
+
+
+
+
+
+
+  const co = function (genfun) {
+    const gen = genfun();
+    const next = (value) => {
+      const ret = gen.next(value);
+      if(ret.done) return
+      ret.value((err, val)=>{
+        if(err){ return console.error(err) }
+        next(val);
+      })
+    }
+    next()
+  }
+  co(
+    function *() {
+      const r1 = yield selectData1(111);
+      const r2 = yield selectData2(22);
+      console.log(r1+"-"+r2);
+    }
+  )
+</script>
