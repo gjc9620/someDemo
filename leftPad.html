@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>leftPad</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+  function leftPad(str, length, ch){
+    const fillStr = ch === undefined ? " " : ch;
+    return new Array(length-str.length).fill(fillStr).join('')+str
+  }
+  leftPad("abc", 8, "0");
+
+</script>
