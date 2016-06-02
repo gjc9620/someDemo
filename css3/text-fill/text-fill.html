@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>textFill</title>
+</head>
+<style>
+	.text{
+		background-image: linear-gradient(to right, red 0%, #000 0%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		font-size: 50px;
+		-webkit-text-stroke:1px transparent;
+	}
+
+</style>
+<body>
+  <div id="text" class="text">ABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFG</div>
+</body>
+</html>
+<script>
+	let text =  document.getElementById("text");
+	let flag = 0;
+	let start = null;
+	const change = function (timestamp){
+		console.log(timestamp);
+		if(flag >= 100) return
+	  text.style.backgroundImage = `linear-gradient(to right, red ${flag+=0.3}%, #000 0%)`;
+	  window.requestAnimationFrame(change);
+	}
+	text.onclick =function(){
+    window.requestAnimationFrame(change);
+	}
+</script>
