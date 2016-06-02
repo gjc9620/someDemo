@@ -11,12 +11,12 @@
 
 <script>
 
-    function myLeftPad(str, length, ch){
+    function myLeftPad(str, length, ch){ // my version
         const fillStr = ch === undefined ? " " : ch;
         return new Array(length-str.length).fill(fillStr).join('')+str
     }
 
-    function leftpad (str, len, ch) {
+    function leftpad (str, len, ch) { // npm version
         str = String(str);
         var i = -1;
         if (!ch && ch !== 0) ch = ' ';
