@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
 	<title>textFill</title>
 </head>
 <style>
@@ -9,26 +10,92 @@
 		background-image: linear-gradient(to right, red 0%, #000 0%);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
-		font-size: 50px;
+		font-size: 20px;
 		-webkit-text-stroke:1px transparent;
+		word-wrap: break-word;
+		position: absolute;
+		left: 0px;
+		width: 100%;
 	}
-
+	#test{
+		background-image: linear-gradient(to right, red 0%, #000 0%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		font-size: 20px;
+		-webkit-text-stroke:1px transparent;
+		word-wrap: break-word;
+		position: absolute;
+		left: 0px;
+		width: 100%;
+	}
+  .row{
+	  height: 20px;
+	  position: relative;
+	  overflow: hidden;
+  }
 </style>
 <body>
-  <div id="text" class="text">ABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFGABCDEFG</div>
+  <div id="test">
+	  ABCDEFGHIJKMNABCDEFGHIJKMNABCDEFGHIJKMNABCDEFGHIJKMNABCDEFGHIJKMNABCDEFGHIJKMNABCDEFGHIJKMNABCDEFGHIJKMNABCDEFGHIJKMNABCDEFGHIJKMNABCDEFGHIJKMNABCDEFGHIJKMNABCDEFGHIJKMNABCDEFGHIJKMNABCDEFGHIJKMNABCDEFGHIJKMNABCDEFGHIJKMNABCDEFGHIJKMNABCDEFGHIJKMNABCDEFGHIJKMNABCDEFGHIJKMNABCDEFGHIJKMNABCDEFGHIJKMNABCDEFGHIJKMN
+  </div>
+  <div class="row">
+	  <div id="text" class="text">
+	  </div>
+  </div>
+
 </body>
 </html>
 <script>
-	let text =  document.getElementById("text");
+	function createDom(rowCount, ff){
+
+	}
+	let text =  document.getElementsByClassName("text");
+	let test =  document.getElementById("test");
+	let data = test.innerHTML;
+	let body =  document.querySelector("body");
+	let {childNodes} = body;
 	let flag = 0;
 	let start = null;
-	const change = function (timestamp){
-		console.log(timestamp);
-		if(flag >= 100) return
-	  text.style.backgroundImage = `linear-gradient(to right, red ${flag+=0.3}%, #000 0%)`;
-	  window.requestAnimationFrame(change);
-	}
-	text.onclick =function(){
-    window.requestAnimationFrame(change);
-	}
+  let domHeight = 20;
+	let rowCount = test.offsetHeight / domHeight;
+
+	let Doms = new Array(rowCount).fill(1).map((v, i)=>{
+    return (`<div class="row"   >
+			<div   class="text" style="top:-${i*domHeight}px">${data}
+			</div>
+			</div>`)
+	});
+
+	body.innerHTML = Doms.join("");
+
+	[].slice.apply(childNodes);
+
+//	const change = function (timestamp){
+//
+//		console.log(timestamp);
+//		if(flag >= 100) return
+//	  text.style.backgroundImage = `linear-gradient(to right, red ${flag+=0.3}%, #000 0%)`;
+//	  window.requestAnimationFrame(change);
+//	};
+	const rowOnclick = function(event){
+    console.log(event);
+		changeStart(event.target);
+	};
+	const changeStart = ()=>{
+
+	};
+	const change = function(Dom){
+    console.log(Dom);
+		let flag = 0;
+		let an = function(){
+			if(flag >= 100) return
+			Dom.style.backgroundImage = `linear-gradient(to right, red ${flag+=0.3}%, #000 0%)`;
+			window.requestAnimationFrame(an);
+		};
+		window.requestAnimationFrame(an);
+	};
+
+	[].slice.apply(text).forEach(v=> v.onclick = rowOnclick );
+
+
 </script>
