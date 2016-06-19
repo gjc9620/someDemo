@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>subtitle</title>
+</head>
+<style>
+	body{
+		font-size: 0px;
+		perspective: 500px
+
+	}
+	.gg{
+		perspective: 500px;
+		width: 400px;
+	}
+	.box{
+		display: inline-block;
+		width: 200px;
+		height: 100px;
+		font-size: 10px;
+	}
+	.left{
+		background: dimgrey;
+		transform-origin: top right;
+		transform: rotateY(-30deg);
+	}
+	.right{
+		background: grey;
+		transform-origin: top left;
+		transform: rotateY(30deg)
+	}
+</style>
+<body>
+	<div class="gg">
+	  <div class="left box">
+		  <div>aaaaaaa</div>
+	  </div>
+	  <div class="right box">
+	    <div>aaaaaaa</div>
+	  </div>
+	</div>
+</body>
+</html>
