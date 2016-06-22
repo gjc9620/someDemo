@@ -18,12 +18,26 @@
 		height: 12rem;
 		width: 20rem;
 		position: relative;
+		font-size: 8rem;
+		/*overflow: hidden;*/
 	}
 	.left{
 		background: dimgrey;
 		transform-origin: top right;;
 		transform: rotateY(-40deg);
-		color: #fff;
+		color: #000;
+		z-index: 1;
+	}
+	.left span{
+		/*transform: translateX(40rem);*/
+		text-shadow: 4px 0px 4px rgba(0,0,0,0.3);
+		position: absolute;
+		/*left: 200%;*/
+		/*right: 0%;*/
+		width: 400%;
+		transform: translateX(40rem);
+		animation: leftgo  10s linear 0s infinite;
+		overflow: hidden;
 	}
 	.right{
 		background: grey;
@@ -31,15 +45,34 @@
 		transform: rotateY(45deg);
 		color: #f8c9d9;
 	}
+	.right span{
+		transform: translateX(20rem);
+		text-shadow: 4px 0px 4px rgba(0,0,0,0.3);
+		position: absolute;
+		width: 400%;
+		/*animation: go 14000ms linear 0ms infinite;*/
+		animation: rightgo 10s linear 0ms infinite;
+		overflow: hidden;
+	}
 
+	@keyframes leftgo {
+    to {
+	    transform: translateX(-100rem);
+    }
+	}
+	@keyframes rightgo {
+    to {
+	    transform: translateX(-100rem);
+    }
+	}
 </style>
 <body>
 	<div class="" id="marquee">
 	  <div class="left box">
-		  <span>aaaaaaa</span>
+		  <span>abcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefg</span>
 	  </div>
 	  <div class="right box" aria-hidden="true">
-	    <span>aaaaaaa</span>
+		  <span>abcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefg</span>
 	  </div>
 	</div>
 </body>
