@@ -5,39 +5,41 @@
 	<title>subtitle</title>
 </head>
 <style>
-	body{
-		font-size: 0px;
-		perspective: 500px
-
+	body {
+	  /*font-family: Avenir, sans-serif;*/
+	  marging: 0;
 	}
-	.gg{
+	#marquee{
 		perspective: 500px;
-		width: 400px;
+		font-size: 0px;
 	}
 	.box{
 		display: inline-block;
-		width: 200px;
-		height: 100px;
-		font-size: 10px;
+		height: 12rem;
+		width: 20rem;
+		position: relative;
 	}
 	.left{
 		background: dimgrey;
-		transform-origin: top right;
-		transform: rotateY(-30deg);
+		transform-origin: top right;;
+		transform: rotateY(-40deg);
+		color: #fff;
 	}
 	.right{
 		background: grey;
 		transform-origin: top left;
-		transform: rotateY(30deg)
+		transform: rotateY(45deg);
+		color: #f8c9d9;
 	}
+
 </style>
 <body>
-	<div class="gg">
+	<div class="" id="marquee">
 	  <div class="left box">
-		  <div>aaaaaaa</div>
+		  <span>aaaaaaa</span>
 	  </div>
 	  <div class="right box" aria-hidden="true">
-	    <div>aaaaaaa</div>
+	    <span>aaaaaaa</span>
 	  </div>
 	</div>
 </body>
