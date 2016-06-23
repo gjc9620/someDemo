@@ -8,6 +8,7 @@
 	body {
 	  /*font-family: Avenir, sans-serif;*/
 	  marging: 0;
+		text-align: center;
 	}
 	#marquee{
 		perspective: 500px;
@@ -19,7 +20,7 @@
 		width: 20rem;
 		position: relative;
 		font-size: 8rem;
-		/*overflow: hidden;*/
+		overflow: hidden;
 	}
 	.left{
 		background: dimgrey;
@@ -29,14 +30,10 @@
 		z-index: 1;
 	}
 	.left span{
-		/*transform: translateX(40rem);*/
-		text-shadow: 4px 0px 4px rgba(0,0,0,0.3);
-		position: absolute;
-		/*left: 200%;*/
-		/*right: 0%;*/
+	  /*//speed 1rem/s*/
 		width: 400%;
 		transform: translateX(40rem);
-		animation: leftgo  10s linear 0s infinite;
+		animation: leftgo  12s linear 0s infinite;
 		overflow: hidden;
 	}
 	.right{
@@ -45,19 +42,21 @@
 		transform: rotateY(45deg);
 		color: #f8c9d9;
 	}
+  .an{
+	  text-shadow: 4px 0px 4px rgba(0,0,0,0.3);
+	  position: absolute;
+	  width: 400%;
+  }
 	.right span{
+	  /*//speed 1rem/s*/
 		transform: translateX(20rem);
-		text-shadow: 4px 0px 4px rgba(0,0,0,0.3);
-		position: absolute;
-		width: 400%;
-		/*animation: go 14000ms linear 0ms infinite;*/
-		animation: rightgo 10s linear 0ms infinite;
+		animation: rightgo 12s linear 0ms infinite;
 		overflow: hidden;
 	}
 
 	@keyframes leftgo {
     to {
-	    transform: translateX(-100rem);
+	    transform: translateX(-80rem);
     }
 	}
 	@keyframes rightgo {
@@ -69,10 +68,10 @@
 <body>
 	<div class="" id="marquee">
 	  <div class="left box">
-		  <span>abcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefg</span>
+		  <span class="an">abcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefg</span>
 	  </div>
 	  <div class="right box" aria-hidden="true">
-		  <span>abcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefg</span>
+		  <span class="an">abcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefg</span>
 	  </div>
 	</div>
 </body>
