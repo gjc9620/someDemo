@@ -14,6 +14,8 @@
 		perspective: 500px;
 		font-size: 0px;
 	}
+
+
 	.box{
 		display: inline-block;
 		height: 12rem;
@@ -63,6 +65,24 @@
     to {
 	    transform: translateX(-100rem);
     }
+	}
+
+
+	@media all and (max-width: 993px) {
+		#marquee {
+			perspective: none;
+		}
+		#marquee div:first-of-type{
+			opacity: 0;
+			height: 0;
+			display: none;
+		}
+		#marquee div:last-of-type{
+			width: 100%;
+			transform: none;
+
+		}
+
 	}
 </style>
 <body>
