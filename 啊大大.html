@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+//	console.profile('test')
+
+  console.time("test");
+  var test1 = function () {
+		var p = 0;
+		for(var i =0.0001;i< 10;i+=0.0001) {
+			p = Math.ceil(12345676.9);
+//			console.log(p)
+		}
+	};
+	test1();
+  console.timeEnd("test");
+
+//	console.profileEnd('test')
+
+
+//	console.profile('test1')
+
+  console.time("test1");
+  var test1 = function () {
+		var p = 0;
+		for(var i =0.0001;i< 10;i+=0.0001) {
+			p = -~ 12345676.9;
+//		  console.log(p)
+		}
+	};
+	test1();
+ console.timeEnd("test1");
+
+//	console.profileEnd('test1')
+
+	console.time("test2");
+//	console.profile('test2')
+	var test2 = function () {
+		var p = 0;
+		for(var i =0.0001;i< 10;i+=0.0001) {
+			p = 12345676.9 | 0;
+//		  console.log(p)
+		}
+	};
+	test2();
+//	console.profileEnd('test2');
+	console.timeEnd("test2");
+
+</script>
