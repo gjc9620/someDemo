@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>sort</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+//  console.log([1,233,44].sort((a,b)=>a>b));
+	  var gg = [
+		  {
+			  age:12,
+			  count: 33,
+			  aa: 64
+		  }
+		  ,{
+			  age:13,
+			  count: 33,
+			  aa: 69
+		  },
+		  ,{
+			  age:12,
+			  count: 32,
+			  aa: 64
+		  }
+	  ];
+    var mysort = function (){
+	    var args = [].slice.apply(arguments);
+	    
+    };
+	  console.log( gg.sort(function(a, b){
+
+		  if(a.age === b.age){
+
+			  if(a.count === b.count){
+
+				  if(a.aa === b.aa){
+            return false
+				  }else {
+					  return a.aa > b.aa
+				  }
+
+			  }else {
+				  return a.count > b.count
+			  }
+		  }else {
+			  return a.age > b.age
+		  }
+//		  if(a.age > b.age){
+//	      return true
+//      }else if (a.age === b.age){
+//
+//			  return a.count > b.count
+//
+//		  }else {
+//			  return false
+//		  }
+	  })  );
+
+</script>
