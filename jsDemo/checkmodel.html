@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>checkmodel</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+
+	////////////////////
+
+
+	function check(model){
+		$(model)
+
+		return model.age > 20
+	}
+
+	function common(checkFun, model, succ, faid){
+		if(checkFun(model) === true){
+			$("model1", false)
+			succ()
+		}else {faid()}
+	}
+	function confirm(checker, model, succ. fail){ //confirm
+		common(checker , model, succ, fail)
+	}
+
+	function send(){
+
+	}
+	function succ(){
+		send()
+	}
+	function fail(){
+
+	}
+
+	var buttonClick = ()=>confirm(check, {name:1,age:3}, succ, fail);
+
+
+
+</script>
