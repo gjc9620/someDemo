@@ -11,7 +11,6 @@
 <script>
   const selectData1 = function (value) {
     return callback=>{
-
       setTimeout(()=>{
         callback(null, "Tom"+value);
       }, 1000)
@@ -42,7 +41,8 @@
       })
     }
     next()
-  }
+  };
+  debugger;
   co(
     function *() {
       const r1 = yield selectData1(111);
