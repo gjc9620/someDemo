@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>testMargin</title>
+</head>
+<style>
+	.aa{
+	  height: 30px;
+		background: darkred;
+	}
+	.bb{
+		height: 20px;
+		background: blue;
+	}
+</style>
+<body>
+  <!--height 0 margintop无效 设置overflow 触发bfc margin有效-->
+  <div class="aa">
+	  <div class="bb"></div>
+  </div>
+</body>
+</html>
