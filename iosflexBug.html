@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>iosFlexBug</title>
+</head>
+<style>
+	.divBig{
+    background: rgba(0, 223, 9, 0.64);
+		height: 500px;
+		display: -webkit-box;
+
+	}
+	.div1{
+		-webkit-box-flex: 3;
+		-webkit-flex-direction: column;
+		display: -webkit-box;
+		height: 100%;
+		background: #334455;
+	}
+	.div1_1{
+		-webkit-box-flex: 1;
+		height: 100%;
+		background: red;
+	}
+	.div1_2{
+		-webkit-box-flex: 2;
+		height: 100%;
+		background: blue;
+
+	}
+	.div2{
+		-webkit-box-flex: 5;
+		display: -webkit-box;
+		height: 100%;
+		background: #bb2021;
+
+	}
+</style>
+<body>
+  <div class="divBig">
+	  <div class="div1">
+		  <div class="div1_1"></div>
+		  <div class="div1_2"></div>
+	  </div>
+	  <div class="div2"></div>
+  </div>
+</body>
+</html>
