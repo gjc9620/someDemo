@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+	function thunkify(fn) {
+		return function() {
+			var args = Array.prototype.slice.call(arguments);
+			var ctx = this;
+
+			return function(done) {
+				var called = false;
+				args.push(function() {
+					if (called) return;
+					called = true;
+					done.apply(null, arguments);
+				});
+				try {
+					fn.apply(ctx, args);
+				} catch (err) {
+					done(err);
+				}
+			}
+		}
+	}
+</script>
