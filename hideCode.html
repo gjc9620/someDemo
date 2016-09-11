@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    Function(
+        "‍‌‌‍‍‍‌‌‍‌‌‍‌‌‌‌‍‌‌‍‌‌‌‍‍‌‌‌‍‍‌‌‍‌‌‍‌‌‌‌‍‌‌‍‌‌‍‍‍‌‌‍‍‌‍‌‍‍‌‍‌‌‌‍‍‌‌‍‌‌‍‍‍‌‌‍‌‌‌‌‍‌‌‍‍‌‌‌‍‍‌‍‌‍‍‍‍‍‌‌‍‍‍‌‍‍‌‌‍‍‍‌‍‍‌‌‍‍‌‍‍‍‌‌‍‍‍‌‍‍‌‌‍‍‌‍‍‍‌‍‌‍‍‌‍‍‌‌‌‍‌‌".replace(
+            /.{8}/g,
+            function(u){
+                // console.log(u.replace(/\u200c/g,1))
+                // console.log(u.replace(/\u200c/g,1).replace(/\u200d/g,0));
+                console.log(String.fromCharCode(parseInt(u.replace(/\u200c/g,1).replace(/\u200d/g,0),2)));
+                return String.fromCharCode(parseInt(u.replace(/\u200c/g,1).replace(/\u200d/g,0),2))
+            }
+        )
+    )();
+</script>
