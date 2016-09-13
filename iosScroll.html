@@ -4,128 +4,236 @@
 	<meta charset="UTF-8">
 	<title>iosScroll</title>
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1.0, maximum-scale=1, user-scalable=no">
 </head>
+
+<!--<style>-->
+	<!--html, body{-->
+		<!--padding: 0;-->
+		<!--margin: 0;-->
+		<!--width: 100%;-->
+		<!--height: 100%;-->
+		<!--overflow: hidden;-->
+	<!--}-->
+	<!--.bar-stable{-->
+		<!--display: inline ;-->
+		<!--font-family: -apple-system, "Helvetica Neue", Roboto, "Segoe UI", sans-serif ;-->
+	<!--}-->
+	<!--.nav-bar-block{-->
+		<!--position: absolute;-->
+		<!--width: 100%;-->
+	<!--}-->
+	<!--.title{-->
+	  <!--text-align: center;-->
+		<!--font-size: 30px ;-->
+	<!--}-->
+	<!--.view-container{-->
+		<!--position: absolute;-->
+		<!--width: 100%;-->
+		<!--height: 100%;-->
+	<!--}-->
+	<!--.tabs-icon-top{-->
+	  <!--position: absolute;-->
+		<!--top: 0;-->
+		<!--bottom: 0;-->
+		<!--left: 0;-->
+		<!--right: 0;-->
+	<!--}-->
+	<!--.tab-nav{-->
+		<!--position: absolute;-->
+		<!--bottom: 0;-->
+		<!--width: 100%;-->
+		<!--height: 50px;-->
+		<!--text-align: center;-->
+		<!--background: goldenrod;-->
+	<!--}-->
+	<!--.tab-dash{-->
+		<!--position: absolute;-->
+		<!--width: 100%;-->
+		<!--height: 100%;-->
+	<!--}-->
+	<!--.pane{-->
+		<!--position: absolute;-->
+		<!--width: 100%;-->
+		<!--height: 100%;-->
+	<!--}-->
+	<!--.scroll-content{-->
+		<!--padding: 10px;-->
+		<!--bottom: 49px;-->
+		<!--top: 44px;-->
+		<!--position: absolute;-->
+		<!--right: 0;-->
+		<!--left: 0;-->
+		<!--overflow: auto;-->
+		<!--width: auto;-->
+		<!--height: auto;-->
+		<!--box-sizing: border-box;-->
+		<!--word-wrap: break-word;-->
+	<!--}-->
+<!--</style>-->
+<!--<body>-->
+  <!--<div class="bar-stable">-->
+	  <!--<div class="nav-bar-block">-->
+		  <!--<div class="title">Dashboard</div>-->
+	  <!--</div>-->
+	  <!--<div></div>-->
+  <!--</div>-->
+
+	<!--<div class="view-container">-->
+	  <!--<div class="tabs-icon-top">-->
+
+		  <!--<div class="tab-nav ">-->
+			  <!--我是底我是底-->
+		  <!--</div>-->
+
+		  <!--<div class="tab-dash">-->
+			  <!--<div class="pane">-->
+				  <!--<div class="scroll-content" style="overflow: scroll">-->
+					  <!--<p>-->
+						  <!--阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机-->
+						  <!--阿斯顿和煎熬后打卡时候打手机-->
+					  <!--</p><p>-->
+						  <!--阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机-->
+						  <!--阿斯顿和煎熬后打卡时候打手机-->
+					  <!--</p><p>-->
+						  <!--阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机-->
+						  <!--阿斯顿和煎熬后打卡时候打手机-->
+					  <!--</p><p>-->
+						  <!--阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机-->
+						  <!--阿斯顿和煎熬后打卡时候打手机-->
+					  <!--</p>-->
+					  <!--<input type="text" style="border: 1px solid black;"/>-->
+					  <!--<input type="text" style="border: 1px solid black;"/>-->
+					  <!--<p>-->
+						  <!--阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机-->
+						  <!--阿斯顿和煎熬后打卡时候打手机-->
+					  <!--</p>-->
+					  <!--<p>-->
+						  <!--阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机-->
+						  <!--阿斯顿和煎熬后打卡时候打手机-->
+					  <!--</p>-->
+					  <!--<p>-->
+						  <!--阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机-->
+						  <!--阿斯顿和煎熬后打卡时候打手机-->
+					  <!--</p>-->
+					  <!--<p>-->
+						  <!--阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机-->
+						  <!--阿斯顿和煎熬后打卡时候打手机-->
+					  <!--</p>-->
+					  <!--<p>-->
+						  <!--阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机-->
+						  <!--阿斯顿和煎熬后打卡时候打手机-->
+					  <!--</p>-->
+				  <!--</div>-->
+			  <!--</div>-->
+		  <!--</div>-->
+	  <!--</div>-->
+	<!--</div>-->
+
+<!--</body>-->
+<!--</html>-->
+
 <style>
-	html, body{
+	html , body{
 		padding: 0;
 		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-	.bar-stable{
-		display: inline ;
-		font-family: -apple-system, "Helvetica Neue", Roboto, "Segoe UI", sans-serif ;
-	}
-	.nav-bar-block{
-		position: absolute;
-		width: 100%;
-	}
-	.title{
-	  text-align: center;
-		font-size: 30px ;
-	}
-	.view-container{
-		position: absolute;
-		width: 100%;
-		height: 100%;
-	}
-	.tabs-icon-top{
-	  position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-	}
-	.tab-nav{
-		position: absolute;
-		bottom: 0;
-		width: 100%;
-		height: 50px;
-		text-align: center;
-		background: goldenrod;
-	}
-	.tab-dash{
-		position: absolute;
-		width: 100%;
-		height: 100%;
-	}
-	.pane{
-		position: absolute;
-		width: 100%;
-		height: 100%;
-	}
-	.scroll-content{
-		padding: 10px;
-		bottom: 49px;
-		top: 44px;
-		position: absolute;
-		right: 0;
-		left: 0;
 		overflow: hidden;
-		width: auto;
-		height: auto;
-		box-sizing: border-box;
-		word-wrap: break-word;
+	}
+  .wrap{
+	  position: absolute;
+	  width: 100%;
+	  height: 100%;
+  }
+	.title{
+		font-size: 30px;
+		height: 40px;
+	}
+	.context{
+    height: calc(100% - 80px);
+		overflow: auto;
+	}
+	.bottom{
+		font-size: 30px;
+		position: absolute;
+		bottom: 0px;
+		height: 40px;
+		width: 100%;
+	}
+	.fuck{
+		height: calc(100% /2);
 	}
 </style>
-<body>
-  <div class="bar-stable">
-	  <div class="nav-bar-block">
-		  <div class="title">Dashboard</div>
-	  </div>
-	  <div></div>
-  </div>
+<html>
+  <body>
 
-	<div class="view-container">
-	  <div class="tabs-icon-top">
+    <div class="wrap">
+	    <div class="title noMove">我是头</div>
+	    <div class="context">
+		    阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机
+		    <p>
+			    阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机
+		    阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机
+		    </p>
+		    阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机
+		    阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机
+		    <input type="text" style="border: 1px solid black;"/>
+		    <input type="text" style="border: 1px solid black;"/>
+		    阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机
+		    阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机
+		    <p>
+			    阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机
+			    阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机
+		    </p>
+		    <button>asda</button>
+		    <p>
+		    阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机
+		    阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机
+	    </p><p>
+		    阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机
+		    阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机
+	    </p> <p>
+		    阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机
+		    阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机
+	    </p> <p>
+		    阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机
+		    阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机
+	    </p>
+	    </div>
+	    <div class="bottom noMove">我是底</div>
+    </div>
 
-		  <div class="tab-nav ">
-			  我是底我是底
-		  </div>
-
-		  <div class="tab-dash">
-			  <div class="pane">
-				  <div class="scroll-content" style="overflow: scroll">
-					  <p>
-						  阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机
-						  阿斯顿和煎熬后打卡时候打手机
-					  </p><p>
-						  阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机
-						  阿斯顿和煎熬后打卡时候打手机
-					  </p><p>
-						  阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机
-						  阿斯顿和煎熬后打卡时候打手机
-					  </p><p>
-						  阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机
-						  阿斯顿和煎熬后打卡时候打手机
-					  </p>
-					  <input type="text" style="border: 1px solid black;"/>
-					  <input type="text" style="border: 1px solid black;"/>
-					  <p>
-						  阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机
-						  阿斯顿和煎熬后打卡时候打手机
-					  </p>
-					  <p>
-						  阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机
-						  阿斯顿和煎熬后打卡时候打手机
-					  </p>
-					  <p>
-						  阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机
-						  阿斯顿和煎熬后打卡时候打手机
-					  </p>
-					  <p>
-						  阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机
-						  阿斯顿和煎熬后打卡时候打手机
-					  </p>
-					  <p>
-						  阿斯顿和煎熬后打卡时候打手机阿斯顿和煎熬后打卡时候打手机
-						  阿斯顿和煎熬后打卡时候打手机
-					  </p>
-				  </div>
-			  </div>
-		  </div>
-	  </div>
-	</div>
-
-</body>
+  </body>
 </html>
+<script>
+	[].slice.apply(document.querySelectorAll(".noMove")).map(function(v){
+		v.addEventListener("touchstart", function(e){
+			console.log(1);
+			e.preventDefault()
+		});
+		v.addEventListener("touchmove", function(e){
+			console.log(2);
+			e.preventDefault();
+		});
+
+	});
+
+	[].slice.apply(document.querySelectorAll("input")).map(function(v){
+		v.addEventListener("focus", function(e){
+			document.querySelector(".wrap").classList.add("fuck");
+//			alert(window.scrollTo);
+			setTimeout(function(){
+			  window.scrollTo(0, 0)
+			}, 50)
+		});
+		v.addEventListener("blur", function(e){
+			document.querySelector(".wrap").classList.remove("fuck")
+		});
+
+	})
+
+
+</script>
+
