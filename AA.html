@@ -12,7 +12,7 @@
 //	找出下面代码的规律并且编写一个函数，转换特定的整数到对应的字符串。
 //	1 => A，2 => B，3 => C，...，26 => Z，27 => AA，28 => AB，29 => AC，...，52 => AZ，53 => BA，...
 //
-  let map = new Array(25).fill(1).map((v,i)=>(i+v).toString(26));
+new Array(25).fill(1).map((v,i)=>(i+v).toString(26));
   map.push("0");
 	function convert (num) {
 		return num.toString(26).split("").map(v=>{
@@ -26,4 +26,34 @@
 	console.log( convert(3));
 	console.log( convert(27));
 
+</script>
+<script>
+	let map = {
+		1: "A",
+		2: "B",
+		3: "C",
+		4: "D",
+		5: "E",
+		6: "F",
+		7: "G",
+		8: "H",
+		9: "I",
+		a: "J",
+		b: "K",
+		c: "L",
+		d: "M",
+		e: "N",
+		f: "O",
+		g: "P",
+		h: "Q",
+		i: "R",
+		j: "S",
+		k: "T",
+		l: "U",
+		m: "V",
+		n: "W",
+		o: "X",
+		p: "Y",
+		q: "Z"
+	};
 </script>
