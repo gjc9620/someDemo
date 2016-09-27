@@ -9,6 +9,23 @@
 </body>
 </html>
 <script>
+
+
+
+        function ggg (e, t) {
+            return e = function (e) {
+                var t, n = "‍", r = "‌";
+                return e = e.replace(/[^\x00-\xff]/g, function (e) {
+                    return e = e.charCodeAt().toString(16),
+                    "\\u" + Array(5 - e.length).join(0) + e
+                }),
+                e = e.replace(/[\s\S]/g, function (e) {
+                    return t = e.charCodeAt().toString(2),
+                            (t[13] ? e : Array(9 - t.length).join(0) + t).replace(/0/g, n).replace(/1/g, r)
+                }),
+                e
+            }
+        }
     Function(
         "‍‌‌‍‍‍‌‌‍‌‌‍‌‌‌‌‍‌‌‍‌‌‌‍‍‌‌‌‍‍‌‌‍‌‌‍‌‌‌‌‍‌‌‍‌‌‍‍‍‌‌‍‍‌‍‌‍‍‌‍‌‌‌‍‍‌‌‍‌‌‍‍‍‌‌‍‌‌‌‌‍‌‌‍‍‌‌‌‍‍‌‍‌‍‍‍‍‍‌‌‍‍‍‌‍‍‌‌‍‍‍‌‍‍‌‌‍‍‌‍‍‍‌‌‍‍‍‌‍‍‌‌‍‍‌‍‍‍‌‍‌‍‍‌‍‍‌‌‌‍‌‌".replace(
             /.{8}/g,
@@ -19,5 +36,5 @@
                 return String.fromCharCode(parseInt(u.replace(/\u200c/g,1).replace(/\u200d/g,0),2))
             }
         )
-    )();
+    )()
 </script>
