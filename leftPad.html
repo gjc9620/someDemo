@@ -25,14 +25,14 @@
     }
     return str;
   }
-  console.time("执行时间")
+  console.time("time1")
   for(let i=0;i<100000;i++){
     myLeftPad("abc", 8, "0");
   }
-  console.timeEnd("执行时间")
-  console.time("执行时间2")
+  console.timeEnd("time1")
+  console.time("time2")
   for(let i=0;i<100000;i++){
     leftpad("abc", 8, "0");
   }
-  console.timeEnd("执行时间2")
+  console.timeEnd("time2")
 </script>
