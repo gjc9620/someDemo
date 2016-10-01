@@ -1,38 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>leftPad</title>
 </head>
 <body>
 
 </body>
 </html>
-
 <script>
-  function myLeftPad(str, length, ch){ // my version
+  function leftPad(str, length, ch){
     const fillStr = ch === undefined ? " " : ch;
     return new Array(length-str.length).fill(fillStr).join('')+str
   }
-  function leftpad (str, len, ch) { // npm version
-    str = String(str);
-    var i = -1;
-    if (!ch && ch !== 0) ch = ' ';
-    len = len - str.length;
-    while (++i < len) {
-      str = ch + str;
-    }
-    return str;
-  }
-  console.time("time1")
-  for(let i=0;i<100000;i++){
-    myLeftPad("abc", 8, "0");
-  }
-  console.timeEnd("time1")
-  console.time("time2")
-  for(let i=0;i<100000;i++){
-    leftpad("abc", 8, "0");
-  }
-  console.timeEnd("time2")
+  leftPad("abc", 8, "0");
+
 </script>
