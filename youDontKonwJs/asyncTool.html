@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tools</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+	function handleErr(err) {
+		return Promise.resolve(
+			it.throw( err )
+			)
+			.then( handleResult );
+	}
+
+	function handleResult(next){
+		// generator has completed running?
+		if (next.done) {
+			return next.value;
+		}
+		// otherwise keep going
+		else {
+			return Promise.resolve( next.value )
+				.then(
+					handleNext,
+					handleErr
+				);
+		}
+	}
+
+	function handleNext(value){
+		// run to the next yielded value
+		var next = it.next( value );
+
+		return (handleResult)(next);
+	}
+
+	// thanks to Benjamin Gruenbaum (@benjamingr on GitHub) fors
+	// big improvements here!
+	function run(gen) {
+		var args = [].slice.call( arguments, 1), it;
+
+		// initialize the generator in the current context
+		it = gen.apply( this, args );
+
+		// return a promise for the generator completing
+		return Promise.resolve()
+			.then( handleNext );
+	}
+
+
+	//book version
+
+	// thanks to Benjamin Gruenbaum (@benjamingr on GitHub) for
+	// big improvements here!
+	function run(gen) {
+		var args = [].slice.call( arguments, 1), it;
+
+		// initialize the generator in the current context
+		it = gen.apply( this, args );
+
+		// return a promise for the generator completing
+		return Promise.resolve()
+			.then( function handleNext(value){
+				// run to the next yielded value
+				var next = it.next( value );
+
+				return (function handleResult(next){
+					// generator has completed running?
+					if (next.done) {
+						return next.value;
+					}
+					// otherwise keep going
+					else {
+						return Promise.resolve( next.value )
+							.then(
+								// resume the async loop on
+								// success, sending the resolved
+								// value back into the generator
+								handleNext,
+
+								// if `value` is a rejected
+								// promise, propagate error back
+								// into the generator for its own
+								// error handling
+								function handleErr(err) {
+									return Promise.resolve(
+										it.throw( err )
+										)
+										.then( handleResult );
+								}
+							);
+					}
+				})(next);
+			} );
+	}
+</script>
