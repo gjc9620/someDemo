@@ -9,5 +9,29 @@
 </body>
 </html>
 <script>
+  function *someThing() {
+    try{
+      var nextVal;
+      while (true){
+        if(nextVal === undefined){
+          nextVal = 1
+        }else {
+          nextVal = (3* nextVal) + 6
+        }
+        yield nextVal
+      }
+    }
+    finally {
+      console.log("clear")
+    }
+  }
 
+  var it = someThing();
+  for(var v of it){
+    console.log(v)
+
+    if(v > 500){
+      console.log(it.return({}))
+    }
+  }
 </script>

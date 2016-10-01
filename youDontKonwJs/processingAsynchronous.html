@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Asynchronous</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+  var it;
+  function timeout(num) {
+    setTimeout(function () {
+      it.next(num * 2)
+    }, 1e3)
+  }
+
+  function *g(num) {
+    var foo = yield timeout(num);
+    console.log(foo)
+    return foo
+  }
+
+  it = g(6);
+  it.next();
+</script>

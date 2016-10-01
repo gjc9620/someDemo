@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>error</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+	function *mian() {
+		var x = yield "hello"
+		x.sss()
+		yield
+	}
+	var it = mian();
+	console.log(it.next())
+	try{
+		it.next()
+	}
+	catch(e) {
+		console.log(e)
+	}
+</script>
