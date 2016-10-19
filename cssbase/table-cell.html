@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>table-cell</title>
+</head>
+<style>
+	.table{
+		display: table;
+	}
+  .table-row{
+    display: table-row;
+  }
+	.table-cell{
+		display: table-cell;
+	}
+</style>
+<body>
+  <div class="table">
+	  <div class="table-row">
+		  <div class="table-cell">asda</div>
+		  <div class="table-cell">asda</div>
+		  <div class="table-cell">asda</div>
+	  </div>
+	  <div class="table-row">
+		  <div class="table-cell">asdasda</div>
+		  <div class="table-cell">asdasda</div>
+		  <div class="table-cell">asdasda</div>
+		  <div class="table-cell">asdasda</div>
+		  <div class="table-cell">asdasda</div>
+	  </div>
+  </div>
+
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+
+  <table width="100%" border="1">
+	  <tr>
+		  <th>Month</th>
+		  <th >Savings</th>
+		  <th colspan="2">Savings for holiday!</th>
+	  </tr>
+	  <tr>
+		  <td>January</td>
+		  <td>$100</td>
+		  <td rowspan="2">$50</td>
+		  <td>$50</td>
+	  </tr>
+	  <tr>
+		  <td>February</td>
+		  <td>$80</td>
+	  </tr>
+	  <tr>
+		  <td>February</td>
+		  <td>$80</td>
+		  <td>$80</td>
+	  </tr>
+	  <tr>
+		  <td>February</td>
+		  <td>$80</td>
+	  </tr>
+  </table>
+</body>
+</html>
