@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo1</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+	async function check(){
+		let promises = _.map(rules, async(rule) => {
+				throw new Error('aaaaaa');
+	});
+		return await Promise.all(promises);
+	}
+
+	async function doCheck(){
+		let result;
+		try{
+			result = await check();
+		}
+		catch(e){
+			console.log('error occurs');
+		}
+	}
+
+	doCheck()
+</script>
