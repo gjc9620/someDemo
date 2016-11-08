@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+  function sleep(arr){
+	  function *genfun(){
+		  let value;
+		  for(funObj of arr){
+			  yield funObj
+		  }
+	  }
+	  let gen = genfun();
+	  let go = (result)=>{
+		  const {done, value} = gen.next();
+		  if(done) return
+		  const {fun, delay} = value;
+      setTimeout(function(){
+	      go(fun(result));
+      },delay)
+	  }
+	  go()
+  }
+	sleep(
+    [
+	    {fun: ()=>1, delay: 1e2 },
+	    {fun: a=>a+1, delay: 3e2},
+	    {fun: b=>b+3, delay: 3e2},
+	    {fun: console.log, delay: 3e2},
+	  ]
+	);
+</script>
