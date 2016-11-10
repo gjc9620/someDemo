@@ -8,7 +8,7 @@
 	/*div {*/
     /*position: absolute;*/
 	/*}*/
-	.red, .pink, .blue, #test {
+	.red, .pink, .blue, #test, .black{
 		position: absolute;
 		width: 100px;
 		color: white;
@@ -16,18 +16,28 @@
 		text-align: center;
 	}
 
+	.stacking-context{
+		/*opacity: 0.99;*/
+		transform: translateX(-0.1px);
+	}
 	.red {
-		z-index: 1;
+		z-index: 2;
 		top: 20px;
 		left: 20px;
 		background: red;
 	}
+	.black{
+		z-index: 66;
+		top: 30px;
+		left: 20px;
+		background: black;
+	}
 
 	.blue {
-		z-index: 2;
+		/*z-index: 1;*/
 		top: 60px;
 		left: 60px;
-		background: green;
+		background: blue;
 	}
 
 	.pink {
@@ -43,18 +53,34 @@
 	}
 </style>
 <body>
-  <div id="test">moccasin</div>
-  <div>
+
+  <div class="stacking-context">
+	  <span class=" black">black</span>
+  </div>
+
+  <div class="stacking-context">
 	  <span class="red">red</span>
   </div>
+
   <div>
 	  <span class="blue">blue</span>
   </div>
+
   <div>
 	  <span class="pink">pink</span>
   </div>
   <!--<div id="test">moccasin</div>-->
 
-
 </body>
 </html>
+<script>
+	/*
+	  zindex和dom结构无关
+	  使用 transforms, filters, css-regions, paged media 会创建新的上下文
+	  两个transforms  第一个不管设置zindex多少都超不过第二个了
+
+	 https://philipwalton.com/articles/what-no-one-told-you-about-z-index/
+
+
+	* */
+</script>
