@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>origin</title>
+</head>
+<style>
+	/*div {*/
+    /*position: absolute;*/
+	/*}*/
+	.red, .pink, .blue, #test {
+		position: absolute;
+		width: 100px;
+		color: white;
+		line-height: 100px;
+		text-align: center;
+	}
+
+	.red {
+		z-index: 1;
+		top: 20px;
+		left: 20px;
+		background: red;
+	}
+
+	.blue {
+		z-index: 2;
+		top: 60px;
+		left: 60px;
+		background: green;
+	}
+
+	.pink {
+		top: 100px;
+		left: 100px;
+		background: pink;
+	}
+	#test{
+		z-index: 1;
+		top: 0px;
+		left: 10px;
+		background: moccasin;
+	}
+</style>
+<body>
+  <div id="test">moccasin</div>
+  <div>
+	  <span class="red">red</span>
+  </div>
+  <div>
+	  <span class="blue">blue</span>
+  </div>
+  <div>
+	  <span class="pink">pink</span>
+  </div>
+  <!--<div id="test">moccasin</div>-->
+
+
+</body>
+</html>
