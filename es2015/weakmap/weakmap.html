@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>weakmap</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+	
+	var wm = new WeakMap();
+	(function () {
+		
+		for(let i=0;i<100000000;i++){
+			wm.set({a:i}, i);
+		}
+		
+	})()
+	console.log(wm);
+	
+</script>

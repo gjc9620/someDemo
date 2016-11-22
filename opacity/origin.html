@@ -18,7 +18,7 @@
 
 	.stacking-context{
 		/*opacity: 0.99;*/
-		transform: translateX(-0.1px);
+		transform: translateX(0px);
 	}
 	.red {
 		z-index: 2;
@@ -27,7 +27,7 @@
 		background: red;
 	}
 	.black{
-		z-index: 66;
+		z-index: 1;
 		top: 30px;
 		left: 20px;
 		background: black;
@@ -51,14 +51,23 @@
 		left: 10px;
 		background: moccasin;
 	}
+	#zindex_height{
+    z-index: 50;
+		position: absolute;
+	}
+	#zindex_low{
+		z-index: 30;
+		position: absolute;
+	}
 </style>
 <body>
 
-  <div class="stacking-context">
+  <div
+		  class="stacking-context_" id="zindex_height">
 	  <span class=" black">black</span>
   </div>
 
-  <div class="stacking-context">
+  <div class="stacking-context_" id="zindex_low">
 	  <span class="red">red</span>
   </div>
 

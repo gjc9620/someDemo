@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>proxy2</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+	function Tree (){
+		return new Proxy({}, handler)
+	}
+	var handler = {
+		get: function (target, key, receiver){
+			console.log(key);
+      if(!(key in target)){
+	      target[key] = new Tree();
+      }
+			return Reflect.get(target, key, receiver);
+		},
+		set: function(target, key){
+		  console.log("set", key);
+		}
+	}
+
+//	function Tree() {
+//		return new Proxy({}, handler);
+//	}
+//	var handler = {
+//		get: function (target, key, receiver) {
+//			if (!(key in target)) {
+//				target[key] = Tree();  // 自动创建一个子树
+//			}
+//			return Reflect.get(target, key, receiver);
+//		}
+//	};
+	var tree = new Tree();
+	tree.branch1.branch2.twig = "green";
+	//console.log(tree.branch1.branch2.twig)
+</script>

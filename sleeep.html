@@ -10,10 +10,9 @@
 </html>
 <script>
 
-  function sleep(arr){
+  function sleep(...funs){
 	  function *genfun(){
-		  let value;
-		  for(funObj of arr){
+		  for(funObj of funs){
 			  yield funObj
 		  }
 	  }
@@ -29,11 +28,10 @@
 	  go()
   }
 	sleep(
-    [
-	    {fun: ()=>1, delay: 1e2 },
-	    {fun: a=>a+1, delay: 3e2},
-	    {fun: b=>b+3, delay: 3e2},
-	    {fun: console.log, delay: 3e2},
-	  ]
+    {fun: ()=>1, delay: 1e2 },
+    {fun: a=>a+1, delay: 3e2},
+    {fun: b=>b+3, delay: 3e2},
+    {fun: console.log, delay: 3e2}
 	);
+
 </script>
