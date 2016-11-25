@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>proxy</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+	function NOPE() {
+		throw new Error("can't modify read-only view");
+	}
+	var handler = {
+		// 覆写所有五种可变方法。
+		get: function (target, key, receiver) {
+//			console.log(newMath === receiver); //receiver其实就是代理
+//			console.log(target);
+//			console.log(Reflect.get(target, key, {a:1}));
+		},
+		set: NOPE,
+		defineProperty: NOPE,
+		deleteProperty: NOPE,
+		preventExtensions: NOPE,
+		setPrototypeOf: NOPE
+	};
+	function readOnlyView(target) {
+		return new Proxy(target, handler);
+	}
+	var newMath = readOnlyView(Math);
+	newMath.a
+</script>

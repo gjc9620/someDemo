@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Reflect</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+//	var name = "" // get property name as a string
+//	Reflect.get(obj, name, wrapper) // if obj[name] is an accessor, it gets run with `this === wrapper`
+//	Reflect.set(obj, name, value, wrapper) //访问器中不想使用自己的方法，而是想要重定向this到wrapper：
+//	var obj = {
+//		set foo(value) { return this.bar(); },
+//		bar: function() {
+//			alert(1);
+//		}
+//	};
+//	var wrapper = {
+//		bar : function() {
+//			console.log("wrapper");
+//		}
+//	}
+//	Reflect.set(obj, "foo", "value", wrapper);
+	
+//	var name = "" // get property name as a string
+//	Reflect.get(obj, name, wrapper) // if obj[name] is an accessor, it gets run with `this === wrapper`
+//	Reflect.set(obj, name, value, wrapper)
+	var obj = {
+		set foo(value) { return this.bar(); },
+		get test() { this.bar() },
+		bar: function() {
+			alert(1);
+		}
+	};
+	var wrapper = {
+		bar : function() {
+			console.log("wrapper");
+		}
+	}
+  Reflect.get(obj, "test", wrapper); //wrapper会代替this的值
+  Reflect.get(obj, "test"); //没有这个参数话就会用 obj代替
+//	Reflect.set(obj, "foo", "value", wrapper);
+</script>
