@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>parabola.</title>
+</head>
+<style>
+	html, body{
+		margin: 0;
+		padding: 0;
+		height: 100%;
+	}
+	.point{
+		width: 2px;
+		height: 2px;
+		border: 1px black solid;
+		border-radius: 50%;
+		position: absolute;
+	}
+</style>
+<body>
+
+</body>
+</html>
+<script>
+	//y = a*x*x + b*x + c
+	//a = 0.001
+//	y1 ＝ a*x1*x1 + b*x1 + c
+//	y2 = a*x2*x2 + b*x2 + c
+	var body = document.querySelector("body");
+	
+	var p1DOM ={
+		x: 0,
+		y: 300
+	};
+	var p2DOM ={
+		x: 700,
+		y: 300
+	};
+	var p1 ={
+		x: 0,
+		y: convert(p1DOM.y)
+	};
+	var p2 ={
+		x: 700,
+		y: convert(p2DOM.y)
+	};
+	var a = 0.001;
+	var b = -0.7;
+	var c = 300;
+	function parabola(x) {
+		return a*x*x + b*x + c
+	}
+	
+	for(var i=p1.x;i<p2.x;i++){
+//	  console.log(i)
+	  var y = parabola(i)
+//	  var htmlTop = convert(y);
+	  var htmlTop = y;
+	  var htmlLeft = i;
+	  createPoint(htmlTop, htmlLeft);
+	}
+	function createPoint(htmlTop, htmlLeft){
+		console.log(htmlTop, htmlLeft)
+	  var point = document.createElement("div");
+	  point.style.left = htmlLeft+"px";
+	  point.style.top = htmlTop+"px";
+		point.classList.add("point");
+		body.appendChild(point);
+	}
+	function convert(y){
+		return body.offsetHeight - y
+	}
+//  let b = p2.x - a * p2.x * p2.x - c
+	
+</script>
