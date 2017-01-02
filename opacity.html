@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>opacity</title>
+</head>
+<style>
+	
+  #d1{
+    opacity: 0.5;
+	  width: 100px;
+	  height: 100px;
+  }
+  #d2{
+    background: red;
+	  width: 100px;
+	  height: 100px;
+  }
+</style>
+<body>
+  <!--//opacity 会影响后代元素   使用background rgba(0 ,0, 0, 0.5) 则不会-->
+  <div id="d1">
+    <div id="d2"></div>
+  </div>
+</body>
+</html>
