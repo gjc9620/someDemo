@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>fuck</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+	
+	//LazyMan('gjc').sleep(5).eat('shit').sleep(10).fuck('pig')
+	//	gjc
+	//	wait 5s
+	//	eat shit
+	//	wait 10s
+	//	fuck pig
+	function sleep(...funs){
+		function *genfun(){
+			for(funObj of funs){
+				yield funObj
+			}
+		}
+		let gen = genfun();
+		const go = (result)=>{
+			const {done, value} = gen.next();
+			if(done) return
+			const {fun, delay} = value;
+			setTimeout(function(){
+				go(fun(result));
+			},delay)
+		}
+		go()
+	}
+	
+	function LazyMan(){
+		let obj = {
+			arr:[],
+			sleep: function (time) {
+				this.arr.push(
+					{
+						fun: ()=>setTimeout(()=>{}),
+					  delay: time*1000
+					}
+				);
+				return this
+			},
+			eat: function (str) {
+				this.arr.push({fun: ()=>document.writeln("eat"+str)});
+				return this
+			},
+			fuck: function (str) {
+				this.arr.push({fun: ()=>document.writeln("fuck"+str)});
+				sleep(...this.arr)
+			}
+		}
+		return obj
+	}
+	
+	LazyMan('pzc').sleep(5).eat('shit').sleep(10).fuck('pig')
+</script>
