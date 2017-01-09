@@ -9,6 +9,7 @@
 </body>
 </html>
 <script>
+	/////我的方法
 	
 	//LazyMan('gjc').sleep(5).eat('shit').sleep(10).fuck('pig')
 	//	gjc
@@ -59,4 +60,70 @@
 	}
 	
 	LazyMan('pzc').sleep(5).eat('shit').sleep(10).fuck('pig')
+	
+	
+	
+	/////zhugong方法
+	
+	
+	function LazyMan(val){
+		var time;
+		var arr = [];
+		var _lazy = {
+			sleep: function(time){
+				arr.push('sleep');
+				arr.push(time*1000)
+				return this;
+			},
+			eat: function(eatVal){
+				arr.push('eat')
+				arr.push(eatVal)
+				
+				return this;
+			},
+			fuck: function(fuckVal){
+				arr.push('fuck')
+				arr.push(fuckVal)
+				
+				return this;
+			}
+		};
+		var index = 0;var time = 0;
+		
+		setTimeout(function(){
+			console.log(val);
+			var f = (function(){
+				for(var i = index; i < arr.length; i++){
+					index = i;
+					(function(i){
+						
+						if(typeof arr[i] =='number') {
+							console.log(arr[i])
+							time = arr[i];
+							(function(time){
+								setTimeout(function(){
+									console.log(arr[i+1]);
+									console.log(arr[i+2]);
+									index += 3;
+									f()
+								},time)
+							})(time)
+							
+						}else {
+							console.log(arr[i])
+						}
+					})(i)
+					if(typeof arr[i] == 'number'){break;}
+				}
+			});
+			f()
+			
+			
+		})
+		
+		
+		return _lazy;
+	}
+	
+	LazyMan('aaa').sleep(5).eat('shit').sleep(10).fuck('pig')
 </script>
