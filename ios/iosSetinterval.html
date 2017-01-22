@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>iosSetintervel</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<meta name="format-detection" content="telephone=no">
+</head>
+<style>
+	#test{
+		width: 100px;
+		height: 100px;
+		/*position: fixed;*/
+		top: 100px;
+		background: white;
+	}
+	#scroll{
+		height: 300px;
+		overflow: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+</style>
+<body>
+  <div id="scroll">
+	  
+	  adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>adadad<br>
+	
+  </div>
+
+  <div id="test"></div>
+  <div id="test-scroll"></div>
+</body>
+</html>
+<script>
+	var count = 1;
+	var test = document.getElementById("test");
+	var testScroll = document.getElementById("test-scroll");
+	var scroll = document.getElementById("scroll");
+	scroll.onscroll = function () {
+		testScroll.innerHTML = count ++
+		setTimeout(function () {
+			alert(1)
+		}, 10000)
+	}
+	setInterval(function () {
+	  test.innerHTML = count ++
+  }, 100)
+</script>
