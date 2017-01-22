@@ -40,9 +40,10 @@
 	var scroll = document.getElementById("scroll");
 	scroll.onscroll = function () {
 		testScroll.innerHTML = count ++
-		setTimeout(function () {
-			alert(1)
-		}, 10000)
+		testScroll.innerHTML = scroll.scrollTop
+//		setTimeout(function () {
+//			alert(1)
+//		}, 10000)
 	}
 	setInterval(function () {
 	  test.innerHTML = count ++
