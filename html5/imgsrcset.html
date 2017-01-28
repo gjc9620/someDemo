@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+	
+	<title>imgsrcset</title>
+</head>
+<style>
+	*{
+		margin: 0px;
+		padding: 0px;
+	}
+	img{
+		/*width: 100vw;*/
+	}
+</style>
+<body>
+  <!--https://webkit.org/demos/srcset/image-2x.png-->
+  <img src="https://webkit.org/demos/srcset/image-1x.png" alt=""
+    srcset="
+    https://webkit.org/demos/srcset/image-1x.png 400w ,
+    https://webkit.org/demos/srcset/image-2x.png 800w ,
+    https://webkit.org/demos/srcset/image-3x.png 1200w ,
+    https://webkit.org/demos/srcset/image-4x.png 1600w
+             
+"
+  >
+</body>
+</html>
