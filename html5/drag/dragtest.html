@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+</head>
+<style>
+	div{
+		border: 1px solid black;
+		margin: 10px;
+	}
+</style>
+<script>
+	
+</script>
+<body >
+  <div ondrop="drop(event)"  id="d1" ></div>
+  <div ondrop="drop(event)" id="d2" >
+	  1
+	  <div id="d3"  draggable="true">
+		  2
+		  <div id="d4" draggable="true">3</div>
+	  </div>
+	  
+	  <div id="d5" draggable="true">
+		  2
+		  <div id="d6" draggable="true">3</div>
+	  </div>
+	  
+  </div>
+</body>
+<script>
+	function ondragover(ev){
+		console.log(ev.target.id + "ondragover");
+		ev.preventDefault();
+	}
+	function ondragStart(ev){
+		console.log(ev.target.id + "ondragStart");
+		ev.preventDefault();
+	}
+	
+	function drag(ev){
+		console.log(ev.target.id + "ondragover");
+		
+		ev.dataTransfer.setData("Text",ev.target.id);
+	}
+	
+	function drop(ev){
+		ev.preventDefault();
+		
+		var id = ev.dataTransfer.getData("Text");
+		var el = document.getElementById(id);
+		
+		ev.target.appendChild(el);
+	}
+	document.getElementsByTagName("div").forEach(function (div) {
+		div.addEventListener("dragover", ondragover);
+		div.addEventListener("dragstart", ondragStart);
+		
+	})
+</script>
+</html>
