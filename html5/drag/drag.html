@@ -11,16 +11,16 @@
 		}
 		
 		function drag(ev){
-			ev.dataTransfer.setData("Text",ev.target);
+			ev.dataTransfer.setData("Text",ev.target.id);
 		}
 		
 		function drop(ev){
 			ev.preventDefault();
-			console.log(ev.dataTransfer);
-			var data = ev.dataTransfer.getData("Text" );
-			console.log(data);
 			
-			ev.target.appendChild(data);
+			var id = ev.dataTransfer.getData("Text");
+			var el = document.getElementById(id);
+			
+			ev.target.appendChild(el);
 		}
 	</script>
 </head>
