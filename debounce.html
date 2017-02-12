@@ -11,7 +11,7 @@
 </body>
 </html>
 <script>
-  function debounce(fn, delay) {
+  function debounce(fn, delay) { //在delay毫秒中多次触发 只执行最后的一次
 		var timer = null;
 		return function () {
 			var context = this, args = arguments;
@@ -26,7 +26,7 @@
     console.log("debounce")
 	}, 1000);
 
-  function throttle(fn, threshhold, scope) {
+  function throttle(fn, threshhold, scope) { //执行条件被触发多次时 按照在threshhold毫秒内只会执行一次的规律持续执行
 	  threshhold || (threshhold = 250);
 	  var last,
 		  deferTimer;
