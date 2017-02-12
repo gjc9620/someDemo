@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <div id="d1">debounce</div>
+ <div id="d2" style="width: 300px; height: 300px; border:1px black solid">throttle</div>
+ <div></div>
+</body>
+</html>
+<script>
+  function debounce(fn, delay) {
+		var timer = null;
+		return function () {
+			var context = this, args = arguments;
+			clearTimeout(timer);
+			timer = setTimeout(function () {
+				fn.apply(context, args);
+			}, delay);
+	  };
+	}
+	
+	document.getElementById("d1").onclick = debounce(function () {
+    console.log("debounce")
+	}, 1000);
+
+  function throttle(fn, threshhold, scope) {
+	  threshhold || (threshhold = 250);
+	  var last,
+		  deferTimer;
+	  return function () {
+		  var context = scope || this;
+		
+		  var now = +new Date,
+			  args = arguments;
+		  if (last && now < last + threshhold) {
+//			  console.log(now , last)
+//			  // hold on to it
+//			  clearTimeout(deferTimer);
+//			  deferTimer = setTimeout(function () {
+//				  last = now;
+//				  fn.apply(context, args);
+//			  }, threshhold);
+		  } else {
+			  last = now;
+			  fn.apply(context, args);
+		  }
+	  };
+  }
+
+  document.getElementById("d2").onmousemove = throttle(function () {
+	  console.log("throttle")
+  }, 1000);
+</script>
