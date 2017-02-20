@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>easeOut</title>
+</head>
+<style>
+	#d1{
+		width: 100px;
+		height: 100px;
+		background: black;
+		border-radius: 50%;
+		position: absolute;
+		transform: translate(0,0);
+	}
+</style>
+<body>
+  <div id="d1"></div>
+</body>
+</html>
+<script>
+	/*
+	 * Tween.js
+	 * t: current time（当前时间）；
+	 * b: beginning value（初始值）；
+	 * c: change in value（变化量）；
+	 * d: duration（持续时间）。
+	 * you can visit 'http://easings.net/zh-cn' to get effect
+	 */
+  var easeOut = function(t, b, c, d) {
+    if ((t /= d) < (1 / 2.75)) {
+      return c * (7.5625 * t * t) + b;
+    } else if (t < (2 / 2.75)) {
+      return c * (7.5625 * (t -= (1.5 / 2.75)) * t + .75) + b;
+    } else if (t < (2.5 / 2.75)) {
+      return c * (7.5625 * (t -= (2.25 / 2.75)) * t + .9375) + b;
+    } else {
+      return c * (7.5625 * (t -= (2.625 / 2.75)) * t + .984375) + b;
+    }
+  }
+  var d1 = document.getElementById("d1");
+  var startTime = null;
+  var duration = 4000;
+  function ani(t) {
+    if(startTime) startTime = t;
+    if(t - startTime > duration) return
+    var top = easeOut(t, 0, window.screen.height-300, duration);
+    d1.style.transform = `translate(0,${top}px)`
+    console.log(top);
+    requestAnimationFrame(ani)
+//    transform: translate(0,0);
+  }
+	requestAnimationFrame(ani);
+</script>
