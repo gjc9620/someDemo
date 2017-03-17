@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SuperAll</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+
+
+  // promise 工厂函数的编译函数
+  let promiseFactoryCompile = (promise, index) => () =>
+	  Promise.resolve(promise)
+    .then(
+      value => console.log(`第${index} 个 promise 结果为:${value}`),
+      err => console.log(`error_msg:${err}`)
+    )
+
+  let promiseSequentially = promises => promises.reduce(
+    (promise, item, index) => promise.then(promiseFactoryCompile(item, index)),
+    Promise.resolve()
+  )
+	 
+  let promises = [
+    { then(resolve) { setTimeout(() => resolve(2), 2000) } },
+    { then(resolve) { setTimeout(() => resolve(4), 4000) } },
+    { then(resolve) { setTimeout(() => resolve(1), 1000) } },
+    { then(resolve) { setTimeout(() => resolve(3), 3000) } }
+  ];
+  
+  promiseSequentially(promises).then(
+    value => console.log(`11`),
+    err => console.log(`error_msg: ${err}`)
+  );
+
+  
+//  Promise.resolve()
+//	  .then(_=>
+//		  Promise.resolve({then(resolve) { setTimeout(() => resolve(2), 2000) }})
+//      .then(
+//        value => console.log(`第0 个 promise 结果为:2`),
+//        err => console.log(`error_msg:${err}`)
+//
+//    )).then(_=>
+//      Promise.resolve({ then(resolve) { setTimeout(() => resolve(4), 4000) } },)
+//      .then(
+//        value => console.log(`第1个 promise 结果为:3`),
+//        err => console.log(`error_msg:${err}`)
+//      )
+//    )
+
+</script>
