@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>target</title>
+</head>
+<style>
+	#myTarget{
+		height: 300px;
+		width: 300px;
+		display: none;
+	}
+	#myTarget:target{
+		background: red;
+		display: block;
+	}
+</style>
+<body>
+  <a href="#myTarget">change</a>
+  <div id="myTarget">
+	  <a href="#close">close</a>
+  </div>
+</body>
+</html>
