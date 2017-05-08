@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo1</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+	const co = {};
+  co.wrap = function(gen) {
+    var idt = gen(resume) //idt  是个迭代器
+    function resume() {
+      var args = arguments //执行结果
+	    var obj = idt.next(args).value
+      if (obj) //只能接受Primse对象
+        obj.then(
+          (res) => {
+            resume(null, res) //异步结束了 递归调用resume(执行结果)  resume又会idt.next() 执行下一步
+          },
+          (err) => resume(err)
+        )
+      
+    }
+    return resume
+  }
+  co.run = function(gen) {
+    co.wrap(gen)()
+  }
+  
+  co.run(function * ($) {
+    // yield
+    const num1 = yield new Promise((resolve, reject) => {
+      setTimeout(()=>{
+        resolve(1)
+      }, 2E3);
+    });
+    const num2 = yield new Promise((resolve, reject) => {
+      setTimeout(()=>{
+        resolve(2)
+      }, 2E3);
+    });
+    console.log(num1[1] + num2[1]);
+  })
+</script>
