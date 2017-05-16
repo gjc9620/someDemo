@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Gaussian Blur</title>
+</head>
+<style>
+	body{
+		/*background: #78B8DC;*/
+	}
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	.wrap{
+		height: 300px;
+		position: relative;
+		/*width: 120%;*/
+		transform: scale(1.2);
+		background: #78B8DC;
+		/*filter: blur(31px) contrast(150%) brightness(80%);*/
+		filter: blur(31px) ;
+		overflow: hidden;
+		font-size: 30px;
+		
+	}
+	.circle{
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		position: absolute;
+		background: #0b0b0b;
+		/*filter: drop-shadow(0px 0px 80px black);*/
+		background: rgba( 0, 0, 0 , 0.6);
+		box-shadow: 0px 0px 3px 40px #000;
+	}
+	.circle1{
+		left: 30%;
+		top: 70%;
+		position: absolute;
+		height: 60px;
+		width: 60px;
+		background: #086290;
+		border-radius: 50%;
+		box-shadow: 0px 0px 177px 100px #086290;
+	}
+	.circle2{
+		left: 50%;
+		top: 40%;
+		position: absolute;
+		height: 60px;
+		width: 60px;
+		background: #016398;
+		border-radius: 50%;
+		box-shadow: 0px 0px 181px 90px #016398;
+	}
+	.circle3{
+		position: absolute;
+		right: 0px;
+		top: 40%;
+		height: 60px;
+		width: 60px;
+		background: #002961;
+		border-radius: 50%;
+		box-shadow: 0px 0px 200px 153px #002961;
+	}
+</style>
+<body>
+  <div class="wrap">
+    <div class="circle1 circle"></div>
+    <div class="circle2 circle"></div>
+	  <div class="circle3"></div>
+	  WTF
+  </div>
+  <img src="file:///Users/gujiacheng/Library/Containers/com.tencent.qq/Data/Library/Application%20Support/QQ/Users/992758355/QQ/Temp.db/5BAB1DA9-EE45-4B09-BF95-C7F6134AA7FA.png" width="100%" alt="">
+</body>
+</html>
