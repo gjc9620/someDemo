@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>card</title>
+</head>
+<style>
+	body{
+		perspective: 1000px;
+	}
+	.wrap{
+		height: 300px;
+		width: 300px;
+		position: relative;
+		transform-style: preserve-3d;
+		transition: 0.6s;
+		transform: rotateY(-180deg);
+	}
+	.wrap:hover{
+		/*transform: rotateY(0deg);*/
+		transform: rotateY(-360deg);
+		/*width: 900px;*/
+	}
+	.front{
+		height: 100%;
+		width: 100%;
+		background: red;
+		position: absolute;
+		backface-visibility: hidden;
+		left: 0;
+		top: 0;
+	}
+	.back{
+		height: 100%;
+		width: 100%;
+		background: #ffa91b;
+		position: absolute;
+		left: 0;
+		top: 0;
+		transform: rotateY(-180deg);
+		backface-visibility: hidden;
+		
+	}
+</style>
+<body>
+  <div class="wrap" >
+	  <div class="front">front</div>
+	  <div class="back">back</div>
+  </div>
+</body>
+</html>
+
