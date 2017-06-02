@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+</head>
+<body>
+
+<div id="container">
+	<div class="t1">fff</div>
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+	<div>4</div>
+	<div class="t2" text="fuck">fuck
+		<div class="t2" text="fuck">fuck</div>
+	</div>
+	<div>12</div>
+	<div>13</div>
+	<div>14</div>
+	<div>15</div>
+</div>
+</body>
+</html>
+<script>
+  
+	
+	
+	
+  function getElementByXpath(path) {
+    return document.evaluate(path, document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
+  }
+
+
+  document.querySelectorAll('#container > *[text=fuck] ~ *')
+  var body = document.body;
+  var doms = document.evaluate(`//*[@id='container']/*[@text="fuck"]/following-sibling::*`, document, body, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
+  var tt  = doms.iterateNext();
+  while (tt){
+    console.log(tt)
+    tt  = doms.iterateNext();
+  }
+</script>
+
+
+
+
+<!--<head>-->
+<!--<style>-->
+<!--.level1 {color:red;}-->
+<!--.level2 {color:blue;}-->
+<!--.level3 {color:green;}-->
+<!--</style>-->
+<!--<script type="text/javascript">-->
+<!--function GetSpanElements () {-->
+<!--var message = "";-->
+
+<!--if (document.evaluate) {    // Firefox, Opera, Google Chrome and Safari-->
+<!--var container = document.getElementById ("container");-->
+<!--xPathRes = document.evaluate ( 'span', container, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);-->
+<!--//				return-->
+<!--console.log(xPathRes)-->
+<!--console.log(xPathRes.iterateNext)-->
+<!--message += "The contents of the span elements:<br />";-->
+<!--var actualSpan = xPathRes.iterateNext ();-->
+<!--console.log(actualSpan )-->
+<!--while (actualSpan) {-->
+<!--message += "<b>" + actualSpan.innerHTML + "</b><br />";-->
+<!--actualSpan = xPathRes.iterateNext ()-->
+<!--}-->
+<!--}-->
+<!--else {  // Internet Explorer-->
+<!--message = "Your browser does not support the evaluate method!";-->
+<!--}-->
+
+<!--var info = document.getElementById ("info");-->
+<!--info.innerHTML = message;-->
+<!--}-->
+<!--</script>-->
+<!--</head>-->
+<!--<body onload="GetSpanElements ()">-->
+<!--<span class="level1">Span 1</span>-->
+<!--<div id="container">-->
+<!--<span class="level2">Span 2</span>-->
+<!--<div>-->
+<!--<span class="level3">Span 3</span>-->
+<!--<span class="level3">Span 4</span>-->
+<!--</div>-->
+<!--<span class="level2">Span 5</span>-->
+<!--<span class="level2">Span 6</span>-->
+<!--</div>-->
+<!--<span class="level1">Span 7</span>-->
+<!--<br /><br />-->
+<!--<div id="info" style="background-color:#e0b0b0; width:400px"></div>-->
+<!--</body>-->
