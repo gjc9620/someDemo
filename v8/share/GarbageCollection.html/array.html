@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>array</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+	
+	
+  var a = [];
+  new Array(1e7).fill(1111).forEach(a.push.bind(a)); //snapshot test  TO_OBJECT
+	console.log(a);    //在push 一点就挂了
+</script>
