@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta charset="utf-8">
+	<title>&nbsp;</title><!--防止安卓无法修改title-->
+	<link rel="icon" href="data:;base64,=">
+	<!-- Sets initial viewport load and disables zooming  -->
+	<title>keyboard</title>
+</head>
+<script src="https://cdn.bootcss.com/react/15.5.4/react.min.js"></script>
+<script src="https://cdn.bootcss.com/react/15.5.4/react-dom.min.js"></script>
+<style>
+	.keyboard{
+		
+	}
+	.keyboard-noActivate{
+		display: none;
+	}
+	.keyboard-activate{
+		display: block;
+	}
+	.key{
+		width: 30vw;
+		display: inline-block;
+		text-align: center;
+	}
+	.cursor{
+	  display: none;
+	}
+	.blink-cursor{
+		animation: blink 1s infinite;
+	}
+	@keyframes blink {
+		0% {color: #FFF;}
+		50% {color: #FFF;}
+		51% {color: #000;}
+		100% {color:#000 ;}
+	}
+
+	.input{
+		width: 50vw;
+		height: 30px;
+	}
+	.input-focus:after{
+		content: "|";
+		animation: blink 1s infinite;
+	}
+	
+</style>
+<body>
+  
+  <div class="input-focus"></div>
+
+  <div class="keyboard keyboard-noActivate">
+	  <div class="key">1</div>
+	  <div class="key">2</div>
+	  <div class="key">3</div>
+	  <div class="key">4</div>
+	  <div class="key">5</div>
+	  <div class="key">6</div>
+	  <div class="key">7</div>
+	  <div class="key">8</div>
+	  <div class="key">9</div>
+	  <div class="key">delete</div>
+  </div>
+</body>
+<script>
+	const keyboard = function (h5input) {
+    addEventListener(h5input, 'onclick', function (e) {
+	    alert(1)
+    })
+		return
+  }
+</script>
+</html>

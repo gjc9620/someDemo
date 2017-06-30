@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+	window.onerror = function (...args) {
+		debugger
+  }
+  window.unhandledrejection = function (...args) {
+	  debugger
+  }
+  function error1() {
+	  throw new Error('error');
+  }
+  function error2() {
+	  Promise.reject('promise error');
+  }
+  
+  error1();
+  error2();
+  
+	
+</script>
