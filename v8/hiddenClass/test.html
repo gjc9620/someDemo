@@ -1,0 +1,8 @@
+<input type="button" value="test" id="test" />
+<script>
+  test.onclick=function(){
+    var i,t=new Date,o;
+    for(i=0;i<1E6;i++)o={},o["n"+i]=i;
+    console.log(new Date-t);
+  };
+</script>

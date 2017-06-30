@@ -9,9 +9,7 @@
 </body>
 </html>
 <script>
-	
-	
   var a = [];
-  new Array(1e7).fill(1111).forEach(a.push.bind(a)); //snapshot test  TO_OBJECT
-	console.log(a);    //在push 一点就挂了
+  new Array(1e8).fill(1).forEach((v, i)=>a.push(i)); //snapshot test
+	//console.log(a);    //在push 一点就挂了
 </script>
