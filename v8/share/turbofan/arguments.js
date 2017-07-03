@@ -1,9 +1,7 @@
-/**
- * Created by gujiacheng on 30/06/2017.
- */
+
 var callbacks = [
   function sloppy() {},
-  function strict() { "use strict"; }
+  function strict() { "use strict"; },
 ];
 
 function dispatch() {
@@ -11,3 +9,8 @@ function dispatch() {
     callbacks[i].apply(null, arguments);
   }
 }
+
+for(var i = 0; i < 100000; ++i) {
+  dispatch(1, 2, 3, 4, 5);
+}
+

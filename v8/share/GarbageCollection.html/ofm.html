@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+  var theThing = null;
+  
+  var replaceThing = function () {
+    let a = theThing;
+    
+    let unused = function () {
+      if (a) console.log("hi")
+    };
+    
+    /////// 不断修改引用
+    theThing = {
+      longStr: new Array(1000000).join('*')
+      ,
+      someMethod: function () {
+        console.log('a')
+      }
+    };
+    
+  };
+  
+  
+  setInterval(replaceThing, 1);
+
+</script>

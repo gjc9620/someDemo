@@ -1,6 +1,3 @@
-/**
- * Created by gujiacheng on 30/06/2017.
- */
 
 const arr = new Array(4000);
 function mymax() { return Math.max.apply(undefined, arguments); }
