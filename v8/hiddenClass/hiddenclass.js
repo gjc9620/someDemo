@@ -8,7 +8,7 @@ suite.add('case1', function() {
     function A() {
       
     }
-    for(let i = 0;i< 10000000000; i++){
+    for(let i = 0;i< 10000000; i++){
       var a = new A();
       a.a = 1;
       a.b = 2;
@@ -41,7 +41,7 @@ suite.add('case1', function() {
       this.j = j;
     }
   
-    for(let i = 0;i< 10000000000; i++) {
+    for(let i = 0;i< 10000000; i++) {
       var b = new B(1, 2 ,3, 4,5,6,7,8,9,10,11,13,14);
     }
     
