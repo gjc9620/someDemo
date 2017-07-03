@@ -24,7 +24,7 @@
 
 //--memory
 //ofm demo
-// typedArray limit  gc outofmenory demo trace-gc
+// typedArray limit  gc outofmenory demo -expose-gc
 
 //--tailCallOptimize
 
