@@ -35,8 +35,8 @@
 
 https://docs.google.com/presentation/d/1_eLlVzcj94_G4r9j9d_Lj5HRKFnq6jgpuPJtnmIBs88/edit#slide=id.g2134da681e_0_682
 
-#######有技术上的问题随时可以和我讨论 😄
-###reference
+###### 有技术上的问题随时可以和我讨论 😄
+### reference
 * http://jayconrod.com/posts/55/a-tour-of-v8-garbage-collection
 * https://github.com/v8/v8/wiki/Design-Elements
 * https://github.com/petkaantonov/bluebird/blob/7454401269cfa47e5b001354388c062509103de7/src/util.js#L180-L187
