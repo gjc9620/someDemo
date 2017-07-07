@@ -50,7 +50,7 @@ https://docs.google.com/presentation/d/1_eLlVzcj94_G4r9j9d_Lj5HRKFnq6jgpuPJtnmIB
 * https://github.com/joyeecheung/v8-gc-talk/blob/master/Are%20Your%20V8%20GC%20Logs%20Speaking%20to%20You.pdf
 * http://alinode.aliyun.com/blog/38
 * http://www.ecma-international.org/ecma-262/.0/#sec-relational-operators
-### video
+>> video
 * [Philip Roberts: What the heck is the event loop anyway? | JSConf EU 2014](https://www.youtu1be.com/watch?v=8aGhZQkoFbQ&t=1303s)
 * [MNUG 2017.03.23 TurboFan: A new code generation architecture for V8](https://www.yout1ube.com/watch?v=M1FBosB5tjM&t=2375s)
 * [Tech Talk: How to Use V8 for FastProperty Access in JavaScript](https://www.yout1ube.com/watch?v=z-RXUzkFOSI&t=403s)
