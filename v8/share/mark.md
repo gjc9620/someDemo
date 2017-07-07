@@ -1,8 +1,8 @@
 # v8
 
 ## 架构 历史 机器码 jit crankshaft turbofan + ignition 字节码
-  https://hacks.mozilla.org/2017/02/a-crash-course-in-just-in-time-jit-compilers/ .  
-  https://v8project.blogspot.hk/
+ * https://hacks.mozilla.org/2017/02/a-crash-course-in-just-in-time-jit-compilers/
+ * https://v8project.blogspot.hk/
 
 ## dir
 
