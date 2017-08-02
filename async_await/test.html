@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+  const request = function(){
+    console.count('request');
+    return new Promise(function (res, reject) {
+      setTimeout(function () {
+        res('hi');
+      }, 1000);
+    });
+  };
+	  
+  
+  let cache = {};
+  async function getDetail(reqData){
+    
+    if(cache.id && cache.id === reqData.id){
+      //同id的请求,上一个请求没有返回就返回上一个请求的结果
+      let res = await cache.reqwest;
+      cache = {};
+      return res
+    }
+    
+    cache.id = reqData.id;
+    //request是一个封装过的第三方reqwest
+    cache.reqwest = request({
+      url:'xxxxxxx',
+    });
+    let res = await cache.reqwest;
+    cache = {};
+    return res;
+  }
+  
+  getDetail({id: 123}).then(console.log)
+  getDetail({id: 123}).then(console.log)
+</script>

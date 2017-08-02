@@ -16,3 +16,5 @@ function myFunc(nb) {
 for (var i = 0; i < 2000; ++i) {
   myFunc(i);
 }
+
+
