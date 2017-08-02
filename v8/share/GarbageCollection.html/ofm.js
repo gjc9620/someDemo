@@ -3,9 +3,6 @@ var theThing = null;
 
 var replaceThing = function () {
   let a = theThing;
-  var closure = {
-    a
-  }
   let unused = function () {
     if (a) console.log("hi")
   };
