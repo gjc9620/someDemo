@@ -1,0 +1,37 @@
+<script>
+	class MyClass{
+	  static get [Symbol.species](){
+	    return this
+	  }
+	  
+	  constructor(value){
+	    this.vlaue = value;
+	  }
+	  
+	  clone(){
+	    debugger
+	    return new this.constructor[Symbol.species](this.value);
+	  }
+	}
+	
+	class MyDerivdClass1 extends MyClass{
+	  
+	}
+	class MyDerivdClass2 extends MyClass{
+	  static get [Symbol.species](){
+	    return MyClass;
+	  }
+	}
+	
+	let instance1 = new MyDerivdClass1('foo');
+	let clone1 = instance1.clone();
+	let instance2 = new MyDerivdClass2('bar');
+	let clone2 = instance2.clone();
+	
+	console.log(instance1, instance2, clone1, clone2);
+  
+	
+	
+	
+	
+</script>
