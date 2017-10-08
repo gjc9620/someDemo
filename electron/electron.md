@@ -12,7 +12,7 @@ dev
   api
   debug
   react https://github.com/chentsulin/electron-react-boilerplate
-
+  icon https://iconverticons.com/online/
 build
 
 ref
