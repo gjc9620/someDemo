@@ -14,9 +14,10 @@
 // })
 
 
-const {clipboard }= require('electron');
+const { clipboard }= require('electron');
 
 
+debugger
 const pasteBtn = document.getElementById('paste-to');
 
 pasteBtn.addEventListener('click', function () {
