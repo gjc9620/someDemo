@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>fuck2</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+  const animate = func => (...list) => {
+    let id;
+
+    function run() {
+      func(...list);
+
+      id && window.cancelAnimationFrame(id);
+      id = window.requestAnimationFrame(run);
+    }
+
+    run();
+  };
+
+  class Test {
+    constructor(props) {
+      this.a = [];
+      this.b = {};
+      this.c = 3;
+    }
+
+    func() {
+      console.log('test-func')
+    }
+  }
+
+  animate(() => {
+    const s = new Test();
+  })();
+</script>
