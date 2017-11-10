@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>am</title>
+</head>
+<style>
+  #dd {
+    height: 50px;
+    width: 350px;
+    background: #c2e0d4;
+    position: relative;
+  }
+  #d1, #d2{
+    line-height: 50px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 100%;                          ¡
+    left: 0px;
+  }
+  .a1 {
+    animation: 4s  linear 1 scroll ;
+  }
+  .a2 {
+    animation: 4s  linear 1 2s scroll ;
+  }
+
+  @keyframes scroll {
+    to {
+      transform: translateY(-200%);
+    }
+  }
+  /*@keyframes scroll2 {*/
+    /*to {*/
+      /*transform: translateY(-100%);*/
+    /*}*/
+  /*}*/
+</style>
+<body>
+  <div id='dd'>
+    <div id='d1'></div>
+    <div id='d2'></div>
+  </div>
+</body>
+</html>
+<script>
+  const d1 = document.getElementById('d1');
+  const d2 = document.getElementById('d2');
+  const list = [
+    1,2,3,4,5,6,7,8,
+  ];
+  let index = 0;
+  d1.innerHTML = list[index];
+  d2.innerHTML = list[++index];
+
+  var pfx = ["webkit", "moz", "MS", "o", ""];
+  function prefixedEventListener(element, type, callback) {
+    for (var p = 0; p < pfx.length; p++) {
+      if (!pfx[p]) type = type.toLowerCase();
+      element.addEventListener(pfx[p]+type, callback, false);
+    }
+  }
+
+  d1.classList.add('a1');
+  d2.classList.add('¢a2');
+
+
+  // new event listener function
+  prefixedEventListener(d1,"AnimationEnd",function(e){
+    d1.innerHTML = list[++index];
+    d1.classList.remove('a1');
+    setTimeout(()=>d1.classList.add('a1'));
+  });
+  prefixedEventListener(d2,"AnimationEnd",function(e){
+    d2.innerHTML = list[++index];
+    d2.classList.remove('a2','a1');
+    setTimeout(()=>d2.classList.add('a1'));
+  });
+
+</script>

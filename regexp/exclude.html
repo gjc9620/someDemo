@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>exclude</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+//  var exclude = /node_modules\/(?!(echarts)\/).*/;
+  var exclude = /node_modules\/(?!((echarts$)|(echarts\/.*)))/;
+  function test(str){
+    console.log(str + "  " + exclude.test(str));
+  }
+
+  test('node_modules/echartsAbc');
+  test('node_modules/echartsAbc/');
+  test('node_modules/echartsAbc/index');
+  test('node_modules/echarts');
+  test('node_modules/echarts/');
+  test('node_modules/echarts/index');
+
+
+</script>
