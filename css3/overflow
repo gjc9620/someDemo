@@ -1,0 +1,174 @@
+<style>
+  html {
+    width: 100vw;
+    height: 100vh;
+  }
+  body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: 23px/36px '21Cent-Regular',Georgia,serif,Helvetica Neue,Arial;
+    font-feature-settings: "lnum" 0,"onum";
+    -webkit-font-smoothing: subpixel-antialiased;
+    text-rendering: optimizelegibility;
+  }
+  .demo {
+    margin-top: 18px;
+    box-sizing: border-box;
+    text-align: left;
+    width: 756px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: visible;
+    position: relative;
+    cursor: text;
+    padding:50px;
+  }
+  .example > input {
+    vertical-align: middle;
+    margin: -0.2em 0 0;
+    cursor: pointer;
+  }
+  .example > label {
+    cursor: pointer;
+  }
+  .wrapper {
+    resize: horizontal;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.5em 1em;
+    border: 1px solid;
+    /*transition: width 1.5s;*/
+    margin-top: 10px;
+  }
+
+  .menu {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: space-around;
+  }
+
+  .menu-item {
+    flex-shrink: 1;
+    overflow: hidden;
+    min-width: 2em;
+    padding: 0 0.5em;
+    text-align: center;
+    text-shadow: 0 1px #FFF;
+    margin: 0;
+  }
+
+  .menu-item:before {
+    display: none;
+  }
+
+  .menu-item a {
+    padding: .3em 0 .287em;
+    cursor: pointer;
+    color: #0985ce;
+    text-decoration: none;
+  }
+  .menu-item a:hover {
+    color: #8c64b4;
+  }
+  .overflower {
+    display: inline-flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    box-sizing: border-box;
+    max-width: 100%;
+    height: 1.5em;
+    line-height: 1.5em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .overflower-short {
+    display: block;
+    overflow: hidden;
+    flex-grow: 1;
+    width: 0;
+    text-overflow: ellipsis;
+  }
+  .overflower-long {
+    flex-basis: 100%;
+    display: inline;
+  }
+  :checked + label + .wrapper {
+    width: 30% !important;
+  }
+</style>
+
+<div class="demo">
+  <div class="example">
+    <input type="checkbox" id="WidthTogglerMenu" />
+    <label for="WidthTogglerMenu">
+      Toggle the width of the block below
+    </label>
+    <div class="wrapper">
+      <ul class="menu">
+        <li class="menu-item">
+          <a href="#">
+            <span class="overflower">
+              <span class="overflower-short">
+                <span class="overflower">
+                  <span class="overflower-short">
+                    🐈🐈🐈
+                  </span>
+                  <span class="overflower-long">
+                    Walking cats
+                  </span>
+                </span>
+              </span>
+              <span class="overflower-long">
+                🐈 Walking cats 🐈
+              </span>
+            </span>
+          </a>
+        </li>
+        <!--<li class="menu-item">-->
+          <!--<a href="#">-->
+            <!--<span class="overflower">-->
+              <!--<span class="overflower-short" aria-hidden="true" title="🙀 Surprised cats 🙀">-->
+                <!--<span class="overflower">-->
+                  <!--<span class="overflower-short">-->
+                    <!--🙀🙀🙀-->
+                  <!--</span>-->
+                  <!--<span class="overflower-long">-->
+                    <!--Surprised cats-->
+                  <!--</span>-->
+                <!--</span>-->
+              <!--</span>-->
+              <!--<span class="overflower-long">-->
+                <!--🙀 Surprised cats 🙀-->
+              <!--</span>-->
+            <!--</span>-->
+          <!--</a>-->
+        <!--</li>-->
+        <!--<li class="menu-item">-->
+          <!--<a href="#">-->
+            <!--<span class="overflower">-->
+              <!--<span class="overflower-short" aria-hidden="true" title="🦁 Sad lions 🦁">-->
+                <!--<span class="overflower">-->
+                  <!--<span class="overflower-short">-->
+                    <!--🦁🦁🦁-->
+                  <!--</span>-->
+                  <!--<span class="overflower-long">-->
+                    <!--Sad lions-->
+                  <!--</span>-->
+                <!--</span>-->
+              <!--</span>-->
+              <!--<span class="overflower-long">-->
+                <!--🦁 Sad lions 🦁-->
+              <!--</span>-->
+            <!--</span>-->
+          <!--</a>-->
+        <!--</li>-->
+      </ul>
+    </div>
+  </div>
+</div>
