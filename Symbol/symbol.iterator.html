@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>iterator</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+  let n1 = 1;
+  let n2 = 1;
+
+  function fibonacci() {
+    const result = n1 + n2;
+    n1 = n2;
+    n2 = result;
+    console.log(result);
+    return result;
+  }
+  fibonacci();
+  fibonacci();
+  fibonacci();
+  fibonacci();
+  fibonacci();
+  fibonacci();
+</script>
