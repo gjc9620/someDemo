@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>anim</title>
+</head>
+<style>
+  @keyframes run {
+    from{
+      background-position: left;
+    }
+    to{
+      background-position: calc(-140px * 12) 0;
+    }
+  }
+  #player {
+    width: 140px;
+    height: 144px;
+    background: url("./player.png") left no-repeat;
+    animation: run 0.2s steps(12) infinite;
+  }
+</style>
+<body>
+  <div id="player"></div>
+  <div id="footer"></div>
+</body>
+</html>
+
