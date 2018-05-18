@@ -23,10 +23,10 @@ var replaceThing = function () {
   /////// 不断修改引用
   theThing = {
     longStr: new Array(1000000).join('*')
-    // ,
-    // someMethod: function () {
-    //   console.log('a')
-    // }
+    ,
+    someMethod: function () {
+      console.log('a')
+    }
   };
   
   global.gc();

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<style>
+  #cvs {
+    /*width: 600px;*/
+    /*height: 500px;*/
+    display: none;
+  }
+
+  img, canvas {
+    border: 2px solid gainsboro;
+  }
+</style>
+<body>
+  <canvas id='cvs' width='2304' height='4608' ></canvas>
+</body>
+</html>
+<script>
+  //获取canvas元素
+  var canvas = document.getElementById("cvs");
+  //创建image对象
+  var imgObj = new Image();
+  imgObj.src = `./sea.jpeg`;
+//  imgObj.src = `./googlelogo_color_272x92dp.png`;
+  //待图片加载完后，将其显示在canvas上
+  imgObj.onload = function(){
+    var ctx = canvas.getContext('2d'); //544 144
+//    ctx.drawImage(this, 0, 0);//this即是imgObj,保持图片的原始大小：
+//    ctx.drawImage(this, 0, 0, 0, 0, 0, 0, 2304, 4608);//改变图片的大小到1024*768
+    ctx.drawImage(this, 0, 0, 2304, 4608 ,0, 0, 2304 , 4608 );
+
+    canvas.toBlob(function(blob) {
+      var newImg = document.createElement('img'),
+          url = URL.createObjectURL(blob);
+
+      newImg.onload = function() {
+        // no longer need to read the blob so it's revoked
+        URL.revokeObjectURL(url);
+      };
+
+      newImg.src = url;
+      document.body.appendChild(newImg);
+    }, 'image/jpeg', 0.1);
+  };
+
+</script>
