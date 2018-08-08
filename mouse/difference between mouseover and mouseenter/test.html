@@ -1,0 +1,49 @@
+<ul id="test">
+  <li>item 1</li>
+  <li>item 2</li>
+  <li>
+    item 3
+    <div>dddddd</div>
+  </li>
+</ul>
+
+<script>
+  var test = document.getElementById("test");
+
+
+  // this handler will be executed only once when the cursor moves over the unordered list
+  // test.addEventListener("mouseenter", function( event ) {
+  //   // highlight the mouseenter target
+  //   console.log('mouseenter')
+  //   event.target.style.color = "purple";
+  //
+  //   // reset the color after a short delay
+  //   setTimeout(function() {
+  //     event.target.style.color = "";
+  //   }, 500);
+  // }, false);
+
+
+  // this handler will be executed every time the cursor is moved over a different list item
+  // test.addEventListener("mouseover", function( event ) {
+  //   // highlight the mouseover target
+  //   event.target.style.color = "orange";
+  //   console.log('mouseover')
+  //
+  //   // reset the color after a short delay
+  //   setTimeout(function() {
+  //     event.target.style.color = "";
+  //   }, 500);
+  // }, false);
+
+  test.addEventListener("mouseout", function( event ) {
+    // highlight the mouseover target
+    event.target.style.color = "orange";
+    console.log('mouseout')
+
+    // reset the color after a short delay
+    setTimeout(function() {
+      event.target.style.color = "";
+    }, 500);
+  }, false);
+</script>
