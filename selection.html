@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+    <div id="editable" contenteditable="true" onkeydown='fuckInput(event)' ><pre>text text text<br>text text text<br>text text text<br></pre>1</div>
+
+
+</body>
+</html>
+<script>
+  let lastBrID = 0;
+  var el = document.getElementById("editable");
+
+  function fuckInput(e){
+    if(e.code === "AltLeft") {
+      const selection = window.getSelection();
+      const text = el.innerHTML;
+      const { focusOffset, anchorOffset, anchorNode } = selection;
+      const [selectionStart, selectionEnd] = new Int16Array([focusOffset, anchorOffset]).sort();
+      debugger
+      const _text = `${text.slice(0, selectionStart)}<br id="${ ++lastBrID }" />${text.slice(selectionEnd)}`;
+      anchorNode.textContent = _text;
+      setCaret()
+    }
+  }
+
+  function setCaret() {
+    var range = document.createRange();
+    var sel = window.getSelection();
+    const br = document.getElementById(lastBrID);
+    const index = [...el.childNodes].findIndex(c=>c === br);
+    console.log(index)
+    range.setStart(el.childNodes[index + 1], 0);
+    range.collapse(true);
+    sel.removeAllRanges();
+    sel.addRange(range);
+    el.focus();
+  }
+
+</script>
+

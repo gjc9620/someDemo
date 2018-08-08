@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Paste Image Example</title>
+
+<body>
+
+<h1>
+  Copy an image and then press Command+V (Mac) or Ctrl+V (Windows) anywhere in the div below.
+</h1>
+
+<textarea id="my-div"
+     style="border:1px solid #777777;height: 50px;padding: 5px;"
+     onpaste="console.log('onpastefromhtml')">
+</textarea>
+
+<script>
+
+  var PasteImage = function (el) {
+    this._el = el;
+    this._listenForPaste();
+  };
+
+  PasteImage.prototype._getImageFromContentEditableOnNextTick = function () {
+    var self = this;
+
+    // We need to wait until the next tick as Firefox will not have added the image to our
+    // contenteditable element
+    setTimeout(function () {
+      self._getImageFromContentEditable();
+    });
+  };
+
+  PasteImage.prototype._getURLObj = function () {
+    return window.URL || window.webkitURL;
+  };
+
+  PasteImage.prototype._pasteImage = function (image) {
+    this.emit('paste-image', image);
+  };
+
+  PasteImage.prototype._pasteImageSource = function (src) {
+    var self = this,
+      image = new Image();
+
+    image.onload = function () {
+      self._pasteImage(image);
+    };
+
+    image.src = src;
+  };
+
+
+  PasteImage.prototype._onPaste = function (e) {
+
+    // We need to check if event.clipboardData is supported (Chrome & IE)
+    if (e.clipboardData && e.clipboardData.items) {
+
+      // Get the items from the clipboard
+      var items = e.clipboardData.items;
+
+      // Loop through all items, looking for any kind of image
+      for (var i = 0; i < items.length; i++) {
+        if (items[i].type.indexOf('image') !== -1) {
+          // We need to represent the image as a file
+          var blob = items[i].getAsFile();
+
+          debugger
+          // Use a URL or webkitURL (whichever is available to the browser) to create a
+          // temporary URL to the object
+          var URLObj = this._getURLObj();
+          var source = URLObj.createObjectURL(blob);
+
+          // The URL can then be used as the source of an image
+          this._pasteImageSource(source);
+
+          // Prevent the image (or URL) from being pasted into the contenteditable element
+          e.preventDefault();
+        }
+      }
+    } else {
+      // If we can't handle clipboard data directly (Firefox & Safari), we need to read what was
+      // pasted from the contenteditable element
+      this._getImageFromContentEditableOnNextTick();
+    }
+  };
+
+  PasteImage.prototype._listenForPaste = function () {
+    var self = this;
+
+    self._origOnPaste = self._el.onpaste;
+
+    self._el.addEventListener('paste', function (e) {
+
+      self._onPaste(e);
+
+      // Preserve an existing onpaste event handler
+      if (self._origOnPaste) {
+        self._origOnPaste.apply(this, arguments);
+      }
+
+    });
+  };
+
+  // TODO: use EventEmitter instead
+  PasteImage.prototype.on = function (event, callback) {
+    this._callback = callback;
+  };
+
+  // TODO: use EventEmitter instead
+  PasteImage.prototype.emit = function (event, arg) {
+    this._callback(arg);
+  };
+
+  PasteImage.prototype._loadImage = function (src) {
+    return new Promise(function (resolve) {
+      var img = new Image();
+      img.onload = function () {
+        resolve(img);
+      };
+      img.src = src;
+    });
+  };
+
+  PasteImage.prototype._findFirstImage = function () {
+    var self = this;
+
+    return new Promise(function (resolve) {
+      for (var i in self._el.childNodes) {
+        var node = self._el.childNodes[i];
+
+        // Is the element an image?
+        if (node.tagName === 'IMG') {
+
+          resolve(node);
+
+        } else if (node.childNodes[0]) { // Are there children?
+
+          // If you copy an image from within Safari and then paste it within Safari, the image can be
+          // nested somewhere under the contenteditable element.
+          var imgs = node.getElementsByTagName('img');
+
+          if (imgs) {
+            resolve(imgs[0]);
+          }
+
+        }
+
+      }
+
+      // No image found so just resolve
+      resolve();
+    });
+  };
+
+  PasteImage.prototype._removeFirstImage = function () {
+    var self = this;
+
+    return self._findFirstImage().then(function (img) {
+      if (img) {
+        // In Safari if we copy and image and then paste an image within Safari we need to construct a
+        // proper image from the blob as Safari doesn't do this for us. Moreover, we need to wait for
+        // our converted image to be loaded before removing the image from the DOM as otherwise there
+        // can be a race condition where we remove the image before it has been loaded and this
+        // apparently stops the loading process.
+        return self._loadImage(img.src).then(function (loadedImage) {
+          img.parentElement.removeChild(img);
+
+          return loadedImage;
+        });
+      }
+    });
+  };
+
+  PasteImage.prototype._getImageFromContentEditable = function () {
+    var self = this;
+
+    this._removeFirstImage().then(function (img) {
+      // Process the pasted image
+      self._pasteImage(img);
+    });
+  };
+
+  // -----
+
+  var pasteImage = new PasteImage(document.getElementById('my-div'));
+
+  pasteImage.on('paste-image', function (image) {
+    document.body.appendChild(image);
+  });
+
+</script>
+
+</body>
+</html>

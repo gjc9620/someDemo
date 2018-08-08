@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>onpaste event example</title>
+</head>
+
+<body>
+<h1>Play with this editor!</h1>
+<div id="editor" rows="3" cols="80" contenteditable="true">
+Try pasting text into this area!
+</div>
+
+<script>
+  function log(txt) {
+    document.getElementById("log").appendChild(document.createTextNode(txt + "\n"));
+  }
+
+  function pasteIntercept(e) {
+    var items = e.clipboardData.items;
+
+    for (var i = 0; i < items.length; i++) {
+      if (items[i].type.indexOf('image') !== -1) {
+        var blob = items[i].getAsFile();
+        var URLObj = window.URL.createObjectURL(blob);
+        console.log()
+        e.preventDefault();
+      }
+    }
+  }
+
+  document.getElementById("editor").addEventListener("paste", pasteIntercept, false);
+</script>
+
+  <h2>Log</h2>
+  <img src="" alt="">
+</body>
+</html>
