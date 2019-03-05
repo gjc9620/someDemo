@@ -29,15 +29,17 @@
     return arr
   }
 
+  const findProto = Object.create(
+    Object.assign(Object.create([]), {
+      where: function (...args) { return find(where(this, ...args)) },
+      orderBy: function (...args) { return find(orderBy(this, ...args)) },
+    })
+  );
+
   var find = function(origin) {
     // your code here...
-    const arrProto = Object.assign(Object.create([]), {
-      where: (...args)=>find(where(origin, ...args)),
-      orderBy: (...args)=>find(orderBy(origin, ...args)),
-    });
-
     return Object.assign(
-      Object.create(arrProto),
+      Object.create(findProto),
       origin,
       { length: origin.length },
     )
