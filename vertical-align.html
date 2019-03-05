@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>vertical-align</title>
+</head>
+<body>
+
+  <style>
+    div{
+      /*width: 300px;*/
+      background-color: #cccccc;
+      /*height:200px;*/
+      font-size: 50px;
+      position: relative;
+    }
+    img{
+      height:100px;
+      vertical-align: text-top;
+    }
+    span {
+      background: #5CB1E2;
+    }
+    .text-top {
+      vertical-align: text-top;
+      display: inline-block;
+      background: #8aba87;
+      height: 1px;
+      width: 2000px;
+      margin-right: -2000px;
+    }
+    .m {
+      vertical-align: middle;
+      display: inline-block;
+      background: #2322e0;
+      height: 1px;
+      width: 2000px;
+      margin-right: -2000px;
+    }
+    .baseline {
+      vertical-align: baseline;
+      display: inline-block;
+      background: red;
+      height: 1px;
+      width: 2000px;
+      margin-right: -2000px;
+    }
+    .text-bottom {
+      vertical-align: text-bottom;
+      display: inline-block;
+      background: #8aba87;
+      height: 1px;
+      width: 2000px;
+      margin-right: -2000px;
+    }
+    .middle-help{
+      height: 300px;
+      vertical-align: middle;
+      width: 1px;
+      background-color: black;
+      display: inline-block;
+    }
+
+  </style>
+
+
+  <div>
+    <div class='text-top'></div>
+    <div class='m'></div>
+    <div class='baseline'></div>
+    <div class='text-bottom'></div>
+    <span >x</span>
+    <img src = "https://mdn.mozillademos.org/files/12245/frame_image.svg" >
+    <span>AagG</span>
+    <div class="middle-help"></div>
+  </div>
+
+</body>
+</html>
