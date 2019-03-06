@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+  /*** 实现下面的find方法包括orderBy、where ***/
+  var data = [
+    { userId: 8, title: 'title1'},
+    { userId: 11, title: 'other'},
+    { userId: 15, title: null},
+    { userId: 19, title: 'title2'}
+  ];
+
+  function where ({ title } = {}){
+    return this.filter(v=>title.test(v.title));
+  }
+
+  function orderBy(field, order){
+    const arr = [...this];
+    arr.sort((v1, v2)=>{
+      if(order === 'desc'){
+        const v = v1[field] - v2[field];
+        if(v > 0) {
+          return -1
+        }
+
+        if(v < 0) {
+          return 1
+        }
+        debugger
+        return 0
+      }
+    });
+    return arr
+  }
+
+  // console.log(orderBy(data, 'userId', 'desc'));
+
+  var find = function(origin) {
+    // your code here...
+    return Array.from(
+      Object.assign(
+        Object.create({
+          where,
+          orderBy: (...args)=>find(orderBy(origin, ...args)),
+        }),
+        origin,
+        { length: origin.length },
+      )
+    )
+  }
+  //查找data中，符合条件的数据，并进行排序
+
+  var result = find(data).where({
+    "title": /\d$/,
+  }).orderBy('userId', 'desc');
+  console.log(result); // [{ userId: 19, title: 'title2'}, { userId: 8, title: 'title1' }];
+
+
+
+</script>
