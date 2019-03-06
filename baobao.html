@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,20 +41,22 @@
     return arr
   }
 
-  const findProto = Object.create(
-    Object.assign(Object.create([]), {
-      where: function (...args) { return find(where(this, ...args)) },
-      orderBy: function (...args) { return find(orderBy(this, ...args)) },
-    })
-  );
+  // const findProto = Object.create(
+  //   Object.assign(Object.create([]), {
+  //     where: function (...args) { return find(where(this, ...args)) },
+  //     orderBy: function (...args) { return find(orderBy(this, ...args)) },
+  //   })
+  // );
+
+  class Find extends Array{
+    where (...args) { return find(where(this, ...args)) }
+    orderBy (...args) { return find(orderBy(this, ...args)) }
+  }
+
 
   var find = function(origin) {
     // your code here...
-    return Object.assign(
-      Object.create(findProto),
-      origin,
-      { length: origin.length },
-    )
+    return new Find(...origin)
   }
   //查找data中，符合条件的数据，并进行排序
 
