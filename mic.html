@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../../Downloads/html2canvas.min.js"></script>
+
+</head>
+<style>
+  /*html {*/
+    /*background-image: url('B4F81054-E5CA-414E-8C56-37E86C2A5F04.png');*/
+  /*}*/
+  div{
+    /*background-image: url('B4F81054-E5CA-414E-8C56-37E86C2A5F04.png');*/
+    text-align: center;
+    font-family: STSong;
+    /*color: #C1C0BB;*/
+    /*color: rgb(50,3, 71);*/
+    color: rgb(97, 94, 87);
+    line-height: 1.5;
+    transform: scale(0.7);
+    font-weight: 1;
+    font-size: 15px;
+    /*letter-spacing: 38pt;*/
+    background-color: rgb(180, 180, 174);
+  }
+
+  #c {
+    width: 100%;
+    overflow: auto;
+  }
+
+  canvas {
+    transform: scale(7);
+    transform-origin: top center;
+  }
+</style>
+<body>
+  <div class='d1'>
+    <div>盒 个 片</div>
+    <div>米氮平片</div>
+    <div>心理科室</div>
+    <div>林国珍</div>
+  </div>
+  <div id='c'></div>
+</body>
+</html>
+
+<script >
+  html2canvas(document.body).then(function(canvas) {
+    document.getElementById('c').appendChild(canvas);
+  });
+</script>
