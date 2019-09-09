@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+  <title>Title</title>
+</head>
+<body>
+  <style>
+    html, body {
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .d2 {
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+    }
+
+    .d3 {
+      flex: 1;
+      overflow: auto;
+    }
+
+    .d4 {
+      height: 100px;
+      background: red;
+    }
+
+    .long {
+      background: linear-gradient(blue, 10%, pink);
+      height: 1000px;
+    }
+
+    textarea {
+      margin-top: 500px;
+    }
+  </style>
+
+  <div class='d2'>
+    <div class='d3'>
+      <div class='long'>
+        <textarea>adasdsa</textarea>
+      </div>
+    </div>
+    <div class='d4'></div>
+  </div>
+
+</body>
+</html>
+<script>
+  document.querySelector('textarea').onfocus = ()=>{
+    document.querySelector('textarea').scrollIntoView()
+  }
+</script>
