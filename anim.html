@@ -13,6 +13,7 @@
     <div class='cc'>
       <div class='c2'>111111</div>
       <div class='c2'>22222</div>
+      <div class='c2'>333</div>
       <div class='c2'>111111</div>
     </div>
   </div>
@@ -21,26 +22,27 @@
 <script>
   var style = document.createElement('style');
 
+  const count = 3;
   const itemHeight = 50;
   const moveTime = 1000;
   const pausedTime = 2000;
 
-  const animTime = moveTime * 2 + pausedTime * 2;
+  const animTime = moveTime * count + pausedTime * count;
 
   const moveTimePercent = moveTime / animTime * 100;
-  const stayTimePercent = pausedTime / animTime * 100;
+  const pausedTimePercent = pausedTime / animTime * 100;
 
-  const a1Tob = (moveTimePercent);
-  const bPausedTime = (a1Tob + stayTimePercent);
-  const bToa2 = (bPausedTime + moveTimePercent);
-  const a2PausedTime =  Math.min(bToa2 + stayTimePercent, 99.999);
-
-  console.log(
-    a1Tob,
-    bPausedTime,
-    bToa2,
-    a2PausedTime,
-  )
+  // const a1Tob = (moveTimePercent);
+  // const bPausedTime = (a1Tob + pausedTimePercent);
+  // const bToa2 = (bPausedTime + moveTimePercent);
+  // const a2PausedTime =  Math.min(bToa2 + pausedTimePercent, 99.999);
+  //
+  // console.log(
+  //   a1Tob,
+  //   bPausedTime,
+  //   bToa2,
+  //   a2PausedTime,
+  // )
   // debugger
 
   style.innerHTML = `
@@ -48,11 +50,19 @@
         0% {
           transform: translateY(0);
         }
-        ${a1Tob}%, ${bPausedTime}% {
-          transform: translateY(calc(-100% + ${itemHeight * 2}px));
-        }
-        ${bToa2}%, ${a2PausedTime}%{
-          transform: translateY(calc(-100% + ${itemHeight}px));
+        ${
+          (function () {
+            let pre = 0;
+             return [...new Array(count)].map((v, i)=>{
+               const r = (`
+                  ${pre + moveTimePercent}%, ${Math.min(pre + moveTimePercent + pausedTimePercent, 99.999)}% {
+                    transform: translateY(calc(-100% + ${itemHeight * (count - i)}px));
+                  }
+               `)
+               pre = pre + moveTimePercent + pausedTimePercent;
+               return r;
+             }).join('\n')
+          })()
         }
         100% {
           transform: translateY(0);
