@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<style>
+
+
+</style>
+<body>
+  <div class='c1'>
+    <div class='cc'>
+      <div class='c2'>111111</div>
+      <div class='c2'>22222</div>
+      <div class='c2'>111111</div>
+    </div>
+  </div>
+</body>
+</html>
+<script>
+  var style = document.createElement('style');
+
+  const itemHeight = 50;
+  const moveTime = 1000;
+  const pausedTime = 2000;
+
+  const animTime = moveTime * 2 + pausedTime * 2;
+
+  const moveTimePercent = moveTime / animTime * 100;
+  const stayTimePercent = pausedTime / animTime * 100;
+
+  const a1Tob = parseInt(moveTimePercent);
+  const bPausedTime = parseInt(a1Tob + stayTimePercent);
+  const bToa2 = parseInt(bPausedTime + moveTimePercent);
+  const a2PausedTime =  parseInt(bToa2 + stayTimePercent);
+
+  console.log(
+    a1Tob,
+    bPausedTime,
+    bToa2,
+    a2PausedTime,
+  )
+  // debugger
+
+  style.innerHTML = `
+     @keyframes anim {
+        0% {
+          transform: translateY(0);
+        }
+        ${a1Tob}%, ${bPausedTime}% {
+          transform: translateY(calc(-100% + ${itemHeight * 2}px));
+        }
+        ${bToa2}%, ${a2PausedTime}%{
+          transform: translateY(calc(-100% + ${itemHeight}px));
+        }
+        // 0% {
+        //   transform: translateY(0);
+        // }
+        // 100%{
+        //   transform: translateY(-100%);
+        // }
+      }
+
+      .c1 {
+        height: ${itemHeight}px;
+        overflow: hidden;
+      }
+
+      .cc {
+        animation: anim ${animTime}ms linear infinite ${pausedTime}ms;
+      }
+
+      .c2 {
+        height: 50px;
+        font-size: 50px;
+        line-height: 1;
+      }
+
+  `;
+  document.body.appendChild(style)
+</script>
