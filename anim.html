@@ -30,10 +30,10 @@
   const moveTimePercent = moveTime / animTime * 100;
   const stayTimePercent = pausedTime / animTime * 100;
 
-  const a1Tob = parseInt(moveTimePercent);
-  const bPausedTime = parseInt(a1Tob + stayTimePercent);
-  const bToa2 = parseInt(bPausedTime + moveTimePercent);
-  const a2PausedTime =  parseInt(bToa2 + stayTimePercent);
+  const a1Tob = (moveTimePercent);
+  const bPausedTime = (a1Tob + stayTimePercent);
+  const bToa2 = (bPausedTime + moveTimePercent);
+  const a2PausedTime =  Math.min(bToa2 + stayTimePercent, 99.999);
 
   console.log(
     a1Tob,
@@ -54,12 +54,9 @@
         ${bToa2}%, ${a2PausedTime}%{
           transform: translateY(calc(-100% + ${itemHeight}px));
         }
-        // 0% {
-        //   transform: translateY(0);
-        // }
-        // 100%{
-        //   transform: translateY(-100%);
-        // }
+        100% {
+          transform: translateY(0);
+        }
       }
 
       .c1 {
@@ -69,10 +66,11 @@
 
       .cc {
         animation: anim ${animTime}ms linear infinite ${pausedTime}ms;
+        animation-fill-mode: both;
       }
 
       .c2 {
-        height: 50px;
+        height: ${itemHeight}px;
         font-size: 50px;
         line-height: 1;
       }
